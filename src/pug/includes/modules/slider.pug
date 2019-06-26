@@ -1,0 +1,43 @@
+mixin slider(className, {slides, pagesClass, dotsClass, arrowsClass})
+  section.slider(class=[className, pagesClass, dotsClass, arrowsClass])
+    if slides.length
+      each slide in slides
+        .slider__slide
+          h1.slider__title.t-h1= slide.title
+          p.slider__text= slide.text
+          +btn({
+            btnType: `button`,
+            btnText: `Читать подробнее`,
+            btnClass: `btn--fill btn--red slider__btn`
+          })
+
+      if pages == `all`
+        .slider__pages
+      else if pages == `mobile`
+        .slider__pages.slider__pages--mobile
+      else if pages == `desktop`
+        .slider__pages.slider__pages--desktop
+          span.slider__page--current 01
+          span.slider__timeline
+          if slides.length < 10
+            span.slider__page--last 0#{slides.length}
+          else
+            span.slider__page--last= slides.length
+
+      if dots == `all`
+        .slider__dots
+          ul.slider__dots-list
+      else if dots == `mobile`
+        .slider__dots.slider__dots--mobile
+          ul.slider__dots-list
+      else if dots == `desktop`
+        .slider__dots.slider__dots--desktop
+          ul.slider__dots-list
+
+
+      if arrows == `all`
+        .slider__arrows
+      else if arrows == `mobile`
+        .slider__arrows.slider__arrows--mobile
+      else if arrows == `desktop`
+        .slider__arrows.slider__arrows--desktop

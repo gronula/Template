@@ -1,0 +1,15 @@
+extends ../layout/template
+
+block variables
+  -
+    const pages = [{
+      title: `Главная`,
+      link: `main.html`,
+    }];
+
+block content
+  h1 Страницы:
+  ul
+    each page in pages
+      li
+        a(href=page.link)= page.title

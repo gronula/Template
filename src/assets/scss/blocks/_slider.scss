@@ -1,0 +1,60 @@
+.slider {
+  @include bg-responsive('slider-desktop-01','slider-mobile-01', $tablet);
+  overflow: hidden;
+  // display: flex;
+  // width: 100%;
+  min-height: calc(100vh - 8rem);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.slider__track {
+  display: flex;
+}
+
+.slider__slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 5rem);
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  padding-top: 10rem;
+  padding-bottom: 11.25rem;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: $white;
+  }
+
+  &::before {
+    top: 7.5rem;
+    height: 2px;
+  }
+
+  &::after {
+    bottom: 7.5rem;
+    height: 1px;
+  }
+}
+
+.slider__title {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: $white;
+}
+
+.slider__text {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  color: $white;
+}
+
+.slider__btn {
+  align-self: flex-start;
+  margin-top: auto;
+}

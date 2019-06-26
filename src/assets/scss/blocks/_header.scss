@@ -1,0 +1,130 @@
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem;
+  border-bottom: 1px solid $black;
+  -webkit-overflow-scrolling: touch;
+
+  &--opened {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 7.5rem;
+    background-color: $white;
+    border-bottom: 0;
+  }
+
+  @media (min-width: $tablet) {
+    position: sticky;
+    top: -3rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 0;
+    padding-left: 3.75rem;
+    padding-right: 3.75rem;
+    background-color: $white;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc(3rem - 1px);
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba($black, 0.5);
+    }
+  }
+}
+
+.header__logo {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2.5rem;
+  border-bottom: 1px solid $black;
+
+  @media (min-width: $tablet) {
+    order: 3;
+    position: static;
+    width: 20%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 0;
+  }
+}
+
+.header__menu-toggle-btn {
+  position: fixed;
+  z-index: 1;
+  top: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  padding: 1rem;
+  font-size: 0;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2rem;
+    background: url('../img/i-burger.svg') no-repeat center;
+    background-size: contain;
+    transform: translate(-50%, -50%);
+  }
+
+  .header--opened & {
+    &::before {
+      background-image: url('../img/i-close.svg');
+    }
+  }
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.header__tel {
+  @include font('m');
+
+  display: none;
+  align-self: flex-start;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: $black;
+
+  .header--opened & {
+    display: flex;
+  }
+
+  @media (min-width: $tablet) {
+    order: 5;
+    display: flex;
+    justify-content: flex-end;
+    align-self: auto;
+    width: 20%;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+  }
+}

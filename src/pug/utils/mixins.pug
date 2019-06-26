@@ -1,0 +1,21 @@
+mixin picture({minWidth, desktopName, mobileName, imgClass, alt})
+  picture
+    source(
+      type=`image/webp`
+      media=`(min-width: ${minWidth})`
+      srcset=`img/${desktopName}@1x.webp 1x, img/${desktopName}@2x.webp 2x`
+    )
+    source(
+      type=`image/webp`
+      srcset=`img/${mobileName}@1x.webp 1x, img/${mobileName}@2x.webp 2x`
+    )
+    source(
+      media=`(min-width: ${minWidth})`
+      srcset=`img/${desktopName}@1x.png 1x, img/${desktopName}@2x.png 2x`
+    )
+    img(
+      class=imgClass
+      src=`img/${mobileName}@1x.png`
+      srcset=`img/${mobileName}@1x.png 1x, img/${mobileName}@2x.png 2x`
+      alt=alt
+    )

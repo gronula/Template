@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url('../fonts/roboto/Roboto-Regular.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url('../fonts/roboto/Roboto-Medium.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto-Medium.woff') format('woff');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url('../fonts/roboto/Roboto-Bold.woff2') format('woff2'),
+    url('../fonts/roboto/Roboto-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@mixin font($weight: 'r') {
+  @if $weight == 'r' {
+    font-family: 'Roboto Regular', sans-serif;
+    font-weight: 400;
+  }
+
+  @if $weight == 'm' {
+    font-family: 'Roboto Medium', sans-serif;
+    font-weight: 500;
+  }
+
+  @if $weight == 'b' {
+    font-family: 'Roboto Bold', sans-serif;
+    font-weight: 700;
+  }
+}
