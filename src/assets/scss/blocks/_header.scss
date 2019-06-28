@@ -85,14 +85,14 @@
     left: 50%;
     width: 2rem;
     height: 2rem;
-    background: url('../img/i-burger.svg') no-repeat center;
+    background: url('/assets/img/i-burger.svg') no-repeat center;
     background-size: contain;
     transform: translate(-50%, -50%);
   }
 
   .header--opened & {
     &::before {
-      background-image: url('../img/i-close.svg');
+      background-image: url('/assets/img/i-close.svg');
     }
   }
 

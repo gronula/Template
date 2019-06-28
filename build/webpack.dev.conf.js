@@ -1,6 +1,6 @@
-const webpack =  require('webpack')
-const merge = require('webpack-merge')
-const baseWebpackConfig = require('./webpack.base.conf')
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const baseWebpackConfig = require('./webpack.base.conf');
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   // DEV config
@@ -8,7 +8,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: baseWebpackConfig.externals.paths.dist,
-    port: 8081,
+    useLocalIp: true,
+    host: '0.0.0.0',
+    port: 9000,
     overlay: {
       warnings: true,
       errors: true
@@ -19,8 +21,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       filename: '[file].map'
     })
   ]
-})
+});
 
 module.exports = new Promise((resolve, reject) => {
-  resolve(devWebpackConfig)
-})
+  resolve(devWebpackConfig);
+});

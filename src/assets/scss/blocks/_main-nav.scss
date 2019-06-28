@@ -61,7 +61,7 @@
     right: 2.5rem;
     width: 0.625rem;
     height: 1.25rem;
-    background: url('../img/i-triangle.svg') no-repeat center;
+    background: url('/assets/img/i-triangle.svg') no-repeat center;
     transform: translateY(-50%);
   }
 
@@ -87,7 +87,7 @@
       right: 0;
       width: 0.6rem;
       height: 0.6rem;
-      background-image: url('../img/i-triangle-grey.svg');
+      background-image: url('/assets/img/i-triangle-grey.svg');
       transform: translateY(-50%) rotate(0deg);
     }
   }

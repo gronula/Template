@@ -1,6 +1,23 @@
+@mixin bg-responsive($dekstopName, $mobileName, $minWidth) {
+  background-image: url('/assets/img/#{$mobileName}@1x.png');
+
+  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+    background-image: url('/assets/img/#{$mobileName}@2x.png');
+  }
+
+  @media (min-width: $minWidth) {
+    background-image: url('/assets/img/#{$dekstopName}@1x.png');
+
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+      background-image: url('/assets/img/#{$dekstopName}@2x.png');
+    }
+  }
+}
+
+
 // Example:
 // .selector
-//   +yo('font-size', (500px: 24px, 1440px: 52px))
+//   @include fluid('font-size', (500px: 24px, 1440px: 52px))
 
 @mixin fluid($property, $map) {
   // Get the number of provided breakpoints
@@ -106,21 +123,4 @@
   }
 
   @return $newList;
-}
-
-
-@mixin bg-responsive($dekstopName, $mobileName, $minWidth) {
-  background-image: url('../img/#{$mobileName}@1x.png');
-
-  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    background-image: url('../img/#{$mobileName}@2x.png');
-  }
-
-  @media (min-width: $minWidth) {
-    background-image: url('../img/#{$dekstopName}@1x.png');
-
-    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-      background-image: url('../img/#{$dekstopName}@2x.png');
-    }
-  }
 }
