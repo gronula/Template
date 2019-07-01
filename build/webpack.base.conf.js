@@ -25,11 +25,10 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    main: `${PATHS.src}/js/pages/main`,
-    test: `${PATHS.src}/js/pages/test`,
+    bundle: PATHS.src
   },
   output: {
-    filename: `${PATHS.assets}/js/[name].js`,
+    filename: `${PATHS.assets}/js/[name].[hash].js`,
     path: PATHS.dist,
     publicPath: '/'
   },
@@ -104,10 +103,11 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       $: 'jquery',
-      jQuery: 'jquery'
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     }),
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}/css/[name].css`,
+      filename: `${PATHS.assets}/css/[name].[hash].css`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}/img`, to: `${PATHS.assets}/img` },
@@ -121,7 +121,7 @@ module.exports = {
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug$/i,'.html')}`,
-      inject: false,
+      inject: true
     }))
   ],
 };

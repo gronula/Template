@@ -1,8 +1,7 @@
-// JS
-import './js/pages/main'
-
 // SCSS
-import './assets/scss/main.scss'
+import './assets/scss/main.scss';
 
-// CSS (example)
-// import './assets/css/main.css'
+// JS
+import './js/modules/header';
+import './js/modules/main-nav';
+import './js/modules/slider';

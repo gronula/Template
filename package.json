@@ -39,6 +39,8 @@
     "webpack-merge": "4.2.1"
   },
   "dependencies": {
-    "jquery": "3.4.1"
+    "jquery": "3.4.1",
+    "lory.js": "2.5.3",
+    "owl.carousel": "2.3.4"
   }
 }

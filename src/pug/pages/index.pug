@@ -8,8 +8,13 @@ block variables
     }];
 
 block content
-  h1 Страницы:
-  ul
-    each page in pages
-      li
-        a(href=page.link)= page.title
+  style.
+    body { padding: 10px }
+    ol { list-style: decimal; padding-left: 20px }
+
+  main
+    h1 Страницы:
+    ol
+      each page in pages
+        li
+          a(href=page.link)= page.title

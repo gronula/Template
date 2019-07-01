@@ -1,25 +1,32 @@
 mixin slider(className, {slides, pagesClass, dotsClass, arrowsClass})
   section.slider(class=[className, pagesClass, dotsClass, arrowsClass])
-    if slides.length
-      each slide in slides
-        .slider__slide
-          h1.slider__title.t-h1= slide.title
-          p.slider__text= slide.text
-          +btn({
-            btnType: `button`,
-            btnText: `Читать подробнее`,
-            btnClass: `btn--fill btn--red slider__btn`
-          })
+    .owl-carousel.owl-theme
+      if slides.length
+        each slide in slides
+          .slider__slide
+            +picture({
+              minWidth: `1024px`,
+              desktopName: `slider-desktop-01`,
+              mobileName: `slider-mobile-01`,
+              imgClass: `slider__image`,
+              alt: `Доход. Управляющая компания`
+            })
+            h1.slider__title.t-h1= slide.title
+            p.slider__text= slide.text
+            +btn({
+              btnType: `button`,
+              btnText: `Читать подробнее`,
+              btnClass: `btn--fill btn--red slider__btn`
+            })
 
-      .slider__pages.slider__pages--desktop
-        span.slider__page--current 01
-        span.slider__timeline
-        if slides.length < 10
-          span.slider__page--last 0#{slides.length}
-        else
-          span.slider__page--last= slides.length
+    .slider__pages
+      span.slider__page--current 01
+      span.slider__timeline
+      if slides.length < 10
+        span.slider__page--last 0#{slides.length}
+      else
+        span.slider__page--last= slides.length
 
-      .slider__dots.slider__dots--desktop
-        ul.slider__dots-list
+    .slider__dots
 
-      .slider__arrows
+    .slider__arrows

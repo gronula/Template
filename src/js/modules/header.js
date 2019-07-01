@@ -16,16 +16,16 @@ window.addEventListener(`DOMContentLoaded`, () => {
   };
 
   menuToggleBtn.addEventListener(`click`, menuToggleBtnClickHandler);
-  mainNavLinks.forEach((link) => link.addEventListener(`click`, mainNavLinkClickHandler));
-});
+  mainNavLinks.forEach((link) => link.addEventListener(`click`,   mainNavLinkClickHandler));
 
-window.addEventListener(`resize`, () => {
-  if (window.innerWidth >= 1024) {
-    document.body.classList.remove(`no-scroll`);
-    header.classList.remove(`no-scroll`);
-    header.classList.remove(`header--opened`);
-    mainNavItems.forEach((item) => {
-      item.classList.remove(`main-nav__item--opened`);
-    });
-  }
+  window.addEventListener(`resize`, () => {
+    if (window.innerWidth >= 1024) {
+      document.body.classList.remove(`no-scroll`);
+      header.classList.remove(`no-scroll`);
+      header.classList.remove(`header--opened`);
+      mainNavItems.forEach((item) => {
+        item.classList.remove(`main-nav__item--opened`);
+      });
+    }
+  });
 });
