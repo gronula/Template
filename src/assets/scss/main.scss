@@ -6,6 +6,8 @@
 
 /* Mixins */
 @import 'mixins/responsive';
+@import 'mixins/circle';
+@import 'mixins/respond';
 
 /* Global */
 @import 'global/reset';
@@ -27,3 +29,4 @@
 @import 'blocks/user-nav';
 @import 'blocks/btn';
 @import 'blocks/slider';
+@import 'blocks/banners';

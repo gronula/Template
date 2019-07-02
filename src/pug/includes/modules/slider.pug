@@ -1,9 +1,9 @@
 mixin slider(className, {slides, pagesClass, dotsClass, arrowsClass})
-  section.slider(class=[className, pagesClass, dotsClass, arrowsClass])
-    .owl-carousel.owl-theme
+  .slider.swiper-container(class=[className, pagesClass, dotsClass, arrowsClass])
+    .swiper-wrapper
       if slides.length
         each slide in slides
-          .slider__slide
+          .slider__slide.swiper-slide
             +picture({
               minWidth: `1024px`,
               desktopName: `slider-desktop-01`,
@@ -12,7 +12,8 @@ mixin slider(className, {slides, pagesClass, dotsClass, arrowsClass})
               alt: `Доход. Управляющая компания`
             })
             h1.slider__title.t-h1= slide.title
-            p.slider__text= slide.text
+            .slider__text
+              p= slide.text
             +btn({
               btnType: `button`,
               btnText: `Читать подробнее`,
@@ -20,13 +21,23 @@ mixin slider(className, {slides, pagesClass, dotsClass, arrowsClass})
             })
 
     .slider__pages
-      span.slider__page--current 01
+      span.slider__page.slider__page--current 01
       span.slider__timeline
       if slides.length < 10
-        span.slider__page--last 0#{slides.length}
+        span.slider__page.slider__page--last 0#{slides.length}
       else
-        span.slider__page--last= slides.length
+        span.slider__page.slider__page--last= slides.length
 
     .slider__dots
 
     .slider__arrows
+      +btn({
+        btnType: `button`,
+        btnText: ``,
+        btnClass: `slider__arrow slider__arrow--prev`
+      })
+      +btn({
+        btnType: `button`,
+        btnText: ``,
+        btnClass: `slider__arrow slider__arrow--next`
+      })

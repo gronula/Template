@@ -8,7 +8,7 @@
     margin-bottom: 5rem;
   }
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     order: 1;
     display: flex;
     flex-direction: row;
@@ -24,7 +24,7 @@
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     flex-direction: row;
     padding-left: 0;
     padding-right: 0;
@@ -41,7 +41,7 @@
     margin-bottom: 0;
   }
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     margin-bottom: 0;
     margin-right: 2.25rem;
 
@@ -60,7 +60,7 @@
   text-transform: uppercase;
   color: $black;
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     font-size: 0.75rem;
   }
 }

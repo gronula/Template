@@ -13,7 +13,7 @@
   border: 0;
   transition: $trs;
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     font-size: 0.8125rem;
   }
 
@@ -38,8 +38,8 @@
     background: currentColor;
     border-radius: 50px;
 
-    @media (min-width: $tablet) {
-      padding: 1.375rem 3.75rem;
+    @include respond-min(tablet) {
+      padding: 1.375rem 2.125rem;
     }
 
     &.btn--black:hover {
@@ -109,6 +109,12 @@
       border-left-color: $white;
     }
   }
+
+  @include respond-min(tablet) {
+    left: 1.25rem;
+    width: 1rem;
+    height: 0.125rem;
+  }
 }
 
 .btn__triangle {
@@ -125,6 +131,11 @@
 
   .btn--plain:hover & {
     border-left-color: $white;
+  }
+
+  @include respond-min(tablet) {
+    right: 1.25rem;
+    border-width: 0.25rem 0 0.25rem 0.5rem;
   }
 }
 

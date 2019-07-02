@@ -19,7 +19,7 @@
     border-bottom: 0;
   }
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     position: sticky;
     top: -3rem;
     flex-direction: row;
@@ -29,6 +29,7 @@
     padding-left: 3.75rem;
     padding-right: 3.75rem;
     background-color: $white;
+    border-bottom-color: rgba($black, 0.5);
 
     &::before {
       content: '';
@@ -53,7 +54,7 @@
   padding-left: 2.5rem;
   border-bottom: 1px solid $black;
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     order: 3;
     position: static;
     width: 20%;
@@ -96,7 +97,7 @@
     }
   }
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     display: none;
   }
 }
@@ -116,7 +117,7 @@
     display: flex;
   }
 
-  @media (min-width: $tablet) {
+  @include respond-min(tablet) {
     order: 5;
     display: flex;
     justify-content: flex-end;
