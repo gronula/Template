@@ -2,16 +2,20 @@
   background-color: $black;
 }
 
+.bg-white {
+  background-color: $white;
+}
+
 .bg-red {
   background-color: $red;
 }
 
-.bg-green {
-  background-color: $green;
-}
-
 .bg-l-red {
   background-color: $l-red;
+}
+
+.bg-green {
+  background-color: $green;
 }
 
 .bg-l-green {
@@ -30,6 +34,6 @@
   background-color: $l-grey;
 }
 
-.bg-bg {
-  background-color: $bg-grey;
+.bg-d-grey {
+  background-color: $d-grey;
 }

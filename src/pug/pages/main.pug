@@ -7,38 +7,78 @@ block variables
         slides: [
           {
             title: `Мировые акции`,
-            text: `При формировании инвестиционного портфеля управляющий ориентируется на   индекс MSCI World и не отклоняется от него существенно`
+            text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
+            image: {
+              minWidth: `1024px`,
+              desktopName: `slider-desktop-01`,
+              mobileName: `slider-mobile-01`,
+              imgClass: `slider-top__image`,
+              alt: `Доход. Управляющая компания`
+            }
           },
           {
             title: `Мировые акции 2`,
-            text: `При формировании инвестиционного портфеля управляющий ориентируется на   индекс MSCI World и не отклоняется от него существенно`
+            text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
+            image: {
+              minWidth: `1024px`,
+              desktopName: `slider-desktop-01`,
+              mobileName: `slider-mobile-01`,
+              imgClass: `slider-top__image`,
+              alt: `Доход. Управляющая компания`
+            }
           },
           {
             title: `Мировые акции 3`,
-            text: `При формировании инвестиционного портфеля управляющий ориентируется на   индекс MSCI World и не отклоняется от него существенно`
+            text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
+            image: {
+              minWidth: `1024px`,
+              desktopName: `slider-desktop-01`,
+              mobileName: `slider-mobile-01`,
+              imgClass: `slider-top__image`,
+              alt: `Доход. Управляющая компания`
+            }
           },
           {
             title: `Мировые акции 4`,
-            text: `При формировании инвестиционного портфеля управляющий ориентируется на   индекс MSCI World и не отклоняется от него существенно`
+            text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
+            image: {
+              minWidth: `1024px`,
+              desktopName: `slider-desktop-01`,
+              mobileName: `slider-mobile-01`,
+              imgClass: `slider-top__image`,
+              alt: `Доход. Управляющая компания`
+            }
           }
         ],
-        //- pagesClass: `slider--pages-desktop`,
-        //- dotsClass: `slider--dots-all`,
-        //- arrowsClass: `slider--arrows-desktop`
+        pagesClass: `slider-top__pages--desktop`,
+        dotsClass: `slider-top__dots--all`,
+        arrowsClass: `slider-top__arrows--desktop`
       },
       products: {
-        slides: [],
+        slides: [{
+
+        }],
+        pagesClass: ``,
+        dotsClass: ``,
+        arrowsClass: ``
       }
     };
 
 block content
   +header
   main
-    section.banners
-      +slider(`bg-l-grey`, sliders.banners)
+    section.banners.bg-l-grey
+      +slider-top(``, sliders.banners)
 
-    section.products
-      +slider(`bg-l-grey`, sliders.products)
+    section.products.bg-l-grey
+      p.t-l-title.products__caption Посмотрите наши
+      h2.t-h2.products__title Актуальные продукты
+      +slider-main(``, sliders.products)
+      +btn({
+        btnType: `button`,
+        btnText: `Все ПИФы`,
+        btnClass: `btn--fill btn--black`
+      })
 
     p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consequuntur, ex ipsam distinctio similique accusantium illum quo quod neque, tenetur ipsum. Repellat esse suscipit qui sit corrupti reiciendis, quibusdam maxime?
     p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consequuntur, ex ipsam distinctio similique accusantium illum quo quod neque, tenetur ipsum. Repellat esse suscipit qui sit corrupti reiciendis, quibusdam maxime?

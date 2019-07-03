@@ -1,21 +1,13 @@
 .btn {
-  @include font('b');
-
   position: relative;
   display: flex;
   align-items: center;
+  align-self: flex-start;
   padding: 0;
-  font-size: 1.375rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: $black;
   background-color: transparent;
   border: 0;
   transition: $trs;
-
-  @include respond-min(tablet) {
-    font-size: 0.8125rem;
-  }
 
   &--black {
     color: $black;
@@ -90,6 +82,20 @@
     background-color: transparent;
     transition: $trs;
   }
+
+  @include respond-min(tablet) {
+    .btn--plain & {
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-right: 1.125rem;
+      border-width: 0.125rem;
+    }
+
+    &::before {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+  }
 }
 
 .btn__arrow {
@@ -111,7 +117,7 @@
   }
 
   @include respond-min(tablet) {
-    left: 1.25rem;
+    left: 0.6rem;
     width: 1rem;
     height: 0.125rem;
   }
@@ -120,12 +126,12 @@
 .btn__triangle {
   position: absolute;
   top: 50%;
-  right: 0.5rem;
+  right: 0.6rem;
   width: 0;
   height: 0;
   transform: translateY(-50%);
   border-style: solid;
-  border-width: 0.5rem 0 0.5rem 1rem;
+  border-width: 0.4rem 0 0.4rem 0.8rem;
   border-color: transparent transparent transparent currentColor;
   transition: $trs;
 
@@ -134,14 +140,12 @@
   }
 
   @include respond-min(tablet) {
-    right: 1.25rem;
+    right: 0.5rem;
     border-width: 0.25rem 0 0.25rem 0.5rem;
   }
 }
 
 .btn__text {
-  line-height: 1;
-
   .btn--fill & {
     color: $white;
   }

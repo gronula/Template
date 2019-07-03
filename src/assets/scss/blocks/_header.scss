@@ -103,18 +103,21 @@
 }
 
 .header__tel {
-  @include font('m');
-
   display: none;
   align-self: flex-start;
   margin-left: 2.5rem;
   margin-right: 2.5rem;
-  font-size: 2rem;
-  letter-spacing: 0.08em;
-  color: $black;
 
   .header--opened & {
     display: flex;
+  }
+
+  a {
+    @include font('m');
+
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    color: $black;
   }
 
   @include respond-min(tablet) {
@@ -125,7 +128,10 @@
     width: 20%;
     margin-left: 0;
     margin-right: 0;
-    font-size: 1rem;
-    letter-spacing: 0.08em;
+
+    a {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+    }
   }
 }

@@ -1,5 +1,5 @@
-mixin picture({minWidth, desktopName, mobileName, imgClass, alt})
-  div.media-obj(class=imgClass)
+mixin picture(className, {minWidth, desktopName, mobileName, imgClass, alt})
+  div.media-obj(class=[className, imgClass])
     picture
       source(
         type=`image/webp`

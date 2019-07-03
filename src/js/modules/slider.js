@@ -5,10 +5,10 @@ import 'swiper/dist/css/swiper.min.css';
 import Swiper from 'swiper';
 
 $(document).ready(function (){
-  const slider = $(`.slider`);
+  const slider = $(`.slider-top`);
 
   if (slider) {
-    const mySwiper = new Swiper('.swiper-container', {
+    const mySwiper = new Swiper('.slider-top.swiper-container', {
       slidesPerView: 1,
       loop: true,
       loopAdditionalSlides: 3,
@@ -18,13 +18,13 @@ $(document).ready(function (){
         disableOnInteraction: false,
       },
       navigation: {
-        nextEl: '.slider__arrow--next',
-        prevEl: '.slider__arrow--prev',
+        nextEl: '.slider-top__arrow--next',
+        prevEl: '.slider-top__arrow--prev',
       },
       pagination: {
-        el: '.slider__dots',
+        el: '.slider-top__dots',
         clickable: true,
-        bulletClass: `slider__dot`,
+        bulletClass: `slider-top__dot`,
         bulletActiveClass: `active`,
         renderBullet: function (index, className) {
           return `
@@ -51,39 +51,9 @@ $(document).ready(function (){
         },
         slideChange: function () {
           const currentIndex = this.realIndex < 10 ? `0${this.realIndex + 1}` : `${this.realIndex + 1}`;
-          $(this.el).find(`.slider__page--current`).text(currentIndex);
+          $(this.el).find(`.slider-top__page--current`).text(currentIndex);
         }
       }
     });
-
-
-    // const owl = $(`.owl-carousel`);
-    // owl.owlCarousel({
-    //   autoplay: true,
-    //   autoplayTimeout: 6000,
-    //   autoplaySpeed: 1000,
-    //   autoplayHoverPause: true,
-    //   loop: true,
-    //   items: 1,
-    //   startPosition: 0,
-    //   dots: true,
-    //   dotsContainer: `#slider__dots`,
-    //   nav: false,
-    //   onInitialized: function () {
-    //     $(`.slider__dot:first-of-type`).addClass(`active`);
-    //   },
-    //   onChange: function () {
-    //     $(`.slider__dot.active`).removeClass(`active`);
-    //   },
-    //   onChanged: function (e) {
-    //     const currentIndex = e.item.index - 2 < 0 ? 0 : e.item.index - 2;
-    //     $(`.slider__dot`).eq(currentIndex).addClass(`active`);
-    //   }
-    // });
-    // $(`.slider__dots`).on(`click`, `.slider__dot`, function() {
-    //   owl.trigger(`to.owl.carousel`, [$(this).index(), 300]);
-    //   $(`.slider__dot.active`).removeClass(`active`);
-    //   $(this).addClass(`active`);
-    // });
   }
 });

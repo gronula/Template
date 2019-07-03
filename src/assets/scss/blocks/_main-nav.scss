@@ -13,12 +13,12 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-self: stretch;
     width: 60%;
   }
 }
 
 .main-nav__list {
-  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -33,11 +33,12 @@
   border-bottom: 1px solid $black;
 
   @include respond-min(tablet) {
-    margin-right: 1.875rem;
+    overflow: hidden;
+    flex-direction: row;
     border-bottom: 0;
 
-    &:last-of-type {
-      margin-right: 0;
+    &:hover {
+      overflow: visible;
     }
   }
 }
@@ -77,18 +78,32 @@
   }
 
   @include respond-min(tablet) {
+    display: flex;
+    align-items: center;
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 1rem;
+    padding-left: 0rem;
+    padding-right: 3rem;
     font-size: 1.125rem;
 
+    .main-nav__item:last-of-type & {
+      padding-right: 1rem;
+
+      &::after {
+        right: 0;
+      }
+    }
+
     &::after {
-      right: 0;
+      right: 2rem;
       width: 0.6rem;
       height: 0.6rem;
       background-image: url('/assets/img/i-triangle-grey.svg');
       transform: translateY(-50%) rotate(0deg);
+    }
+
+    .main-nav__content & {
+      display: none;
     }
   }
 }
@@ -97,7 +112,7 @@
   overflow: auto;
   position: fixed;
   z-index: 2;
-  top: calc(8rem + 1px);
+  top: 8rem;
   bottom: 0;
   left: 0;
   right: 0;
@@ -110,6 +125,42 @@
 
   .main-nav__item--opened & {
     transform: translateX(0);
+  }
+
+  @include respond-min(tablet) {
+    position: absolute;
+    top: 100%;
+    bottom: auto;
+    flex-direction: row;
+    max-height: calc((100vh - 9.875rem) * 0.8);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(0) scaleY(1);
+    transform-origin: 50% 0;
+    background-color: $white;
+
+    .main-nav__item.hovered & {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0) scaleY(1);
+    }
+  }
+}
+
+.main-nav__block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3.75rem;
+
+  @include respond-min(tablet) {
+    overflow: auto;
+    width: 35%;
+    min-height: 100%;
+    margin-bottom: 0;
+    padding-top: 3.25rem;
+    padding-bottom: 2rem;
+    padding-left: 7rem;
+    padding-right: 2rem;
   }
 }
 
@@ -124,6 +175,12 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  @include respond-min(tablet) {
+    margin-bottom: 2.5rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .main-nav__subitem {
@@ -134,14 +191,29 @@
   &:last-of-type {
     margin-bottom: 0;
   }
+
+  @include respond-min(tablet) {
+    margin-bottom: 1rem;
+  }
 }
 
 .main-nav__sublink {
   align-self: flex-start;
   font-size: 2rem;
-  line-height: 1.375;
+  line-height: 1.4;
   text-decoration: none;
   color: $black;
+
+  @include respond-min(tablet) {
+    @include font('m');
+    align-self: auto;
+    font-size: 1.125rem;
+    transition: $trs;
+
+    &:hover {
+      color: $red;
+    }
+  }
 }
 
 .main-nav__subtitle {
@@ -152,14 +224,33 @@
   margin-left: 2.5rem;
   margin-right: 2.5rem;
   font-size: 1.375rem;
+  line-height: 1.17;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $text-color;
+
+  @include respond-min(tablet) {
+    margin-bottom: 1.25rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
 }
 
 .main-nav__info {
   padding-top: 5rem;
   padding-bottom: 5rem;
+
+  @include respond-min(tablet) {
+    overflow: auto;
+    width: 30%;
+    min-height: 100%;
+    padding-top: 3.25rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .main-nav__banner {
@@ -167,13 +258,38 @@
   padding-bottom: 5rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+
+  @include respond-min(tablet) {
+    overflow: auto;
+    width: 35%;
+    min-height: 100%;
+    padding-top: 3.25rem;
+    padding-bottom: 2rem;
+    padding-left: 3.25rem;
+    padding-right: 10rem;
+  }
 }
 
 .main-nav__banner-image {
+  flex-shrink: 0;
   max-width: 72rem;
   margin-bottom: 2.5rem;
+
+  @include respond-min(tablet) {
+    max-width: none;
+    height: 10rem;
+    margin-bottom: 1.875rem;
+
+    img {
+      object-position: left top;
+    }
+  }
 }
 
 .main-nav__banner-title {
   margin-bottom: 3.75rem;
+
+  @include respond-min(tablet) {
+    margin-bottom: 2.75rem;
+  }
 }

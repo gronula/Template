@@ -1,6 +1,6 @@
 const header = document.querySelector(`.header`);
-const mainNav = header.querySelector(`.main-nav__list`);
-const mainNavItems = mainNav.querySelectorAll(`.main-nav__item`);
+const mainNavList = header.querySelector(`.main-nav__list`);
+const mainNavItems = mainNavList.querySelectorAll(`.main-nav__item`);
 
 const mainNavLinkClickHandler = (evt) => {
   header.classList.toggle(`no-scroll`);
@@ -13,4 +13,18 @@ const mainNavLinkClickHandler = (evt) => {
   currentItem.classList.toggle(`main-nav__item--opened`);
 };
 
-export { mainNavLinkClickHandler };
+const mainNavItemMouseenterHandler = (evt) => {
+  const target = evt.target.closest(`.main-nav__item`);
+  target.classList.add(`hovered`);
+}
+
+const mainNavItemMouseleaveHandler = (evt) => {
+  const target = evt.target.closest(`.main-nav__item`);
+  target.classList.remove(`hovered`);
+}
+
+export {
+  mainNavItemMouseenterHandler,
+  mainNavItemMouseleaveHandler,
+  mainNavLinkClickHandler,
+};

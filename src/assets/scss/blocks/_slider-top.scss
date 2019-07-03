@@ -1,10 +1,10 @@
-.slider {
+.slider-top {
   position: relative;
   width: 100%;
   user-select: none;
 }
 
-.slider__slide {
+.slider-top__slide {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
   }
 }
 
-.slider__image {
+.slider-top__image {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -60,7 +60,7 @@
   }
 }
 
-.slider__title {
+.slider-top__title {
   @include font('m');
   margin-top: 0;
   margin-bottom: 2rem;
@@ -71,12 +71,12 @@
   }
 }
 
-.slider__text {
+.slider-top__text {
   margin-bottom: 5.5rem;
 
   p {
     font-size: 1.75rem;
-    line-height: 1.5;
+    line-height: 1.4;
     color: $white;
   }
 
@@ -89,13 +89,33 @@
   }
 }
 
-.slider__btn {
+.slider-top__btn {
   align-self: flex-start;
   margin-top: auto;
 }
 
-.slider__pages {
+.slider-top__pages {
   display: none;
+
+  &--mobile {
+    display: flex;
+
+    @include respond-min(tablet) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include respond-min(tablet) {
+      display: flex;
+    }
+  }
+
+  &--all {
+    display: flex;
+  }
 
   @include respond-min(tablet) {
     position: absolute;
@@ -103,13 +123,12 @@
     top: 4.75rem;
     left: 18rem;
     right: 7rem;
-    display: flex;
     align-items: center;
     color: $green;
   }
 }
 
-.slider__page {
+.slider-top__page {
   @include font('b');
   font-size: 0.75rem;
   color: $green;
@@ -119,7 +138,7 @@
   }
 }
 
-.slider__timeline {
+.slider-top__timeline {
   width: 1.875rem;
   height: 1px;
   margin-left: 1rem;
@@ -127,14 +146,34 @@
   background-color: $green;
 }
 
-.slider__dots {
+.slider-top__dots {
   position: absolute;
   z-index: 1;
   bottom: 0 !important;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
+
+  &--mobile {
+    display: flex;
+
+    @include respond-min(tablet) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include respond-min(tablet) {
+      display: flex;
+    }
+  }
+
+  &--all {
+    display: flex;
+  }
 
   @include respond-min(tablet) {
     margin-bottom: 2.75rem;
@@ -144,7 +183,7 @@
 
 $circle-radius: 25;
 
-.slider__dot {
+.slider-top__dot {
   width: 4rem;
   height: 4rem;
   margin-bottom: 1.5rem;
@@ -169,8 +208,8 @@ $circle-radius: 25;
     transform-origin: 50% 50%;
     transform: rotate(-90deg);
 
-    .slider:active .slider__dots &,
-    .slider__dots:active & {
+    .slider-top:active .slider-top__dots &,
+    .slider-top__dots:active & {
       animation: none;
     }
   }
@@ -198,7 +237,7 @@ $circle-radius: 25;
   @include respond-min(tablet) {
     width: 2rem;
     height: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
     margin-right: 0.875rem;
     padding: 0.5rem;
 
@@ -214,19 +253,38 @@ $circle-radius: 25;
   100% { stroke-dashoffset: get-dash-value($circle-radius, 100%); }
 }
 
-.slider__arrows {
+.slider-top__arrows {
   display: none;
+
+  &--mobile {
+    display: flex;
+
+    @include respond-min(tablet) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include respond-min(tablet) {
+      display: flex;
+    }
+  }
+
+  &--all {
+    display: flex;
+  }
 
   @include respond-min(tablet) {
     position: absolute;
     z-index: 1;
     bottom: 2.5rem;
     right: 7rem;
-    display: flex;
   }
 }
 
-.slider__arrow {
+.slider-top__arrow {
   width: 3.75rem;
   height: 3.75rem;
   border-radius: 50%;
@@ -238,7 +296,11 @@ $circle-radius: 25;
     transform: rotate(180deg);
   }
 
-  & .btn__circle {
+  &:hover {
+    background-color: $green;
+  }
+
+  .btn__circle {
     position: relative;
     display: flex;
     justify-content: center;
@@ -248,7 +310,12 @@ $circle-radius: 25;
     color: $white;
   }
 
-  &:hover {
-    background-color: $green;
+  .btn__arrow {
+    left: 1.2rem;
+    width: 1rem;
+  }
+
+  .btn__triangle {
+    right: 1.2rem;
   }
 }
