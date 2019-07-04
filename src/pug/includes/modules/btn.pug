@@ -1,4 +1,4 @@
-mixin btn({btnType, btnText, btnClass, isBtn = false, linkHref=`#`})
+mixin btn({btnText, btnClass, btnType = `button`, isBtn = false, linkHref=`#`})
   if isBtn
     button.btn(class=btnClass type=btnType)
       span.btn__circle

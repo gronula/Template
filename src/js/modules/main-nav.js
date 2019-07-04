@@ -14,13 +14,17 @@ const mainNavLinkClickHandler = (evt) => {
 };
 
 const mainNavItemMouseenterHandler = (evt) => {
-  const target = evt.target.closest(`.main-nav__item`);
-  target.classList.add(`hovered`);
+  if (window.innerWidth >= 1024) {
+    const target = evt.target.closest(`.main-nav__item`);
+    target.classList.add(`hovered`);
+  }
 }
 
 const mainNavItemMouseleaveHandler = (evt) => {
-  const target = evt.target.closest(`.main-nav__item`);
-  target.classList.remove(`hovered`);
+  if (window.innerWidth >= 1024) {
+    const target = evt.target.closest(`.main-nav__item`);
+    target.classList.remove(`hovered`);
+  }
 }
 
 export {

@@ -9,7 +9,6 @@ mixin slider-top(className, {slides, pagesClass, dotsClass, arrowsClass})
             .slider-top__text
               p= slide.text
             +btn({
-              btnType: `button`,
               btnText: `Читать подробнее`,
               btnClass: `btn--fill btn--red slider-top__btn`
             })
@@ -26,12 +25,10 @@ mixin slider-top(className, {slides, pagesClass, dotsClass, arrowsClass})
 
     .slider-top__arrows(class=arrowsClass)
       +btn({
-        btnType: `button`,
         btnText: ``,
         btnClass: `slider-top__arrow slider-top__arrow--prev`
       })
       +btn({
-        btnType: `button`,
         btnText: ``,
         btnClass: `slider-top__arrow slider-top__arrow--next`
       })

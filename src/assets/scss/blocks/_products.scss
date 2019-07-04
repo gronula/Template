@@ -1,0 +1,52 @@
+.products {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8rem;
+  padding-left: 2.5rem;
+  padding-bottom: 7rem;
+}
+
+.products__caption {
+  margin-bottom: 1rem;
+  color: $red;
+}
+
+.products__title {
+  margin-bottom: 3.75rem;
+}
+
+.products__slider {
+  overflow: visible;
+  margin-bottom: 5rem;
+}
+
+.products__btn {
+  justify-content: center;
+  min-width: 20rem;
+  margin-bottom: 4rem;
+}
+
+.products__link {
+  position: relative;
+  align-self: flex-start;
+  margin-bottom: 2.5rem;
+  padding-right: 4rem;
+  color: $black;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 1.75rem;
+    height: 1.125rem;
+    background: url('/assets/img/i-arrow.svg') no-repeat center;
+    background-size: contain;
+  }
+}

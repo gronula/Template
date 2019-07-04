@@ -10,57 +10,133 @@ block variables
             text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
             image: {
               minWidth: `1024px`,
-              desktopName: `slider-desktop-01`,
-              mobileName: `slider-mobile-01`,
+              desktopName: `slider-top-desktop-01`,
+              mobileName: `slider-top-mobile-01`,
               imgClass: `slider-top__image`,
-              alt: `Доход. Управляющая компания`
-            }
+              alt: `Мировые акции`
+            },
           },
           {
             title: `Мировые акции 2`,
             text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
             image: {
               minWidth: `1024px`,
-              desktopName: `slider-desktop-01`,
-              mobileName: `slider-mobile-01`,
+              desktopName: `slider-top-desktop-01`,
+              mobileName: `slider-top-mobile-01`,
               imgClass: `slider-top__image`,
-              alt: `Доход. Управляющая компания`
-            }
+              alt: `Мировые акции 2`
+            },
           },
           {
             title: `Мировые акции 3`,
             text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
             image: {
               minWidth: `1024px`,
-              desktopName: `slider-desktop-01`,
-              mobileName: `slider-mobile-01`,
+              desktopName: `slider-top-desktop-01`,
+              mobileName: `slider-top-mobile-01`,
               imgClass: `slider-top__image`,
-              alt: `Доход. Управляющая компания`
-            }
+              alt: `Мировые акции 3`
+            },
           },
           {
             title: `Мировые акции 4`,
             text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
             image: {
               minWidth: `1024px`,
-              desktopName: `slider-desktop-01`,
-              mobileName: `slider-mobile-01`,
+              desktopName: `slider-top-desktop-01`,
+              mobileName: `slider-top-mobile-01`,
               imgClass: `slider-top__image`,
-              alt: `Доход. Управляющая компания`
-            }
-          }
+              alt: `Мировые акции 4`
+            },
+          },
         ],
         pagesClass: `slider-top__pages--desktop`,
         dotsClass: `slider-top__dots--all`,
-        arrowsClass: `slider-top__arrows--desktop`
+        arrowsClass: `slider-top__arrows--desktop`,
       },
       products: {
         slides: [{
-
+            slideClass: `bg-white`,
+            image: {
+              minWidth: `1024px`,
+              desktopName: `slider-main-01`,
+              mobileName: `slider-main-01`,
+              imgClass: `slider-main__image`,
+              alt: `Дивидендные акции. Россия`,
+            },
+            stats: {
+              // количество заполненных ячеек в блоке статистики. мин 0, макс 5
+              risk: `2`,
+              profit: `3`,
+              max: 5,
+            },
+            caption: ``,
+            title: `Дивидендные акции. Россия`,
+            text: `Портфель фонда формируется из акций российских компаний, которые регулярно платят дивиденды`,
+            chart: {
+              result: `+25,97 %`,
+              period: `доход за 2018 год.`,
+            },
+            btn: {
+              btnText: `Подробнее`,
+              btnClass: `btn--plain btn--red slider-main__btn`,
+            }
+        }, {
+            slideClass: `bg-white`,
+            image: {
+              minWidth: `1024px`,
+              desktopName: `slider-main-02`,
+              mobileName: `slider-main-02`,
+              imgClass: `slider-main__image`,
+              alt: `Дивидендные акции. Россия`,
+            },
+            stats: {
+              // количество заполненных ячеек в блоке статистики. мин 0, макс 5
+              risk: `5`,
+              profit: `5`,
+              max: 5,
+            },
+            caption: ``,
+            title: `Дивидендные акции. Россия`,
+            text: `Портфель фонда формируется из акций российских компаний, которые регулярно платят дивиденды`,
+            chart: {
+              result: `+75,97 %`,
+              period: `доход за 2018 год.`,
+            },
+            btn: {
+              btnText: `Подробнее`,
+              btnClass: `btn--plain btn--red slider-main__btn`,
+            }
+        }, {
+            slideClass: `bg-white`,
+            image: {
+              minWidth: `1024px`,
+              desktopName: `slider-main-03`,
+              mobileName: `slider-main-03`,
+              imgClass: `slider-main__image`,
+              alt: `Дивидендные акции. Россия`,
+            },
+            stats: {
+              // количество заполненных ячеек в блоке статистики. мин 0, макс 5
+              risk: `0`,
+              profit: `1`,
+              max: 5,
+            },
+            caption: ``,
+            title: `Дивидендные акции. Россия`,
+            text: `Портфель фонда формируется из акций российских компаний, которые регулярно платят дивиденды`,
+            chart: {
+              result: `+5,97 %`,
+              period: `доход за 2018 год.`,
+            },
+            btn: {
+              btnText: `Подробнее`,
+              btnClass: `btn--plain btn--red slider-main__btn`,
+            }
         }],
         pagesClass: ``,
         dotsClass: ``,
-        arrowsClass: ``
+        arrowsClass: ``,
       }
     };
 
@@ -73,12 +149,13 @@ block content
     section.products.bg-l-grey
       p.t-l-title.products__caption Посмотрите наши
       h2.t-h2.products__title Актуальные продукты
-      +slider-main(``, sliders.products)
+      +slider-main(`products__slider`, sliders.products)
       +btn({
-        btnType: `button`,
         btnText: `Все ПИФы`,
-        btnClass: `btn--fill btn--black`
+        btnClass: `btn--fill btn--black products__btn`
       })
+      a.t-l-title.t-tdn.products__link(href=`#`) Подробнее о ПИФах
+      a.t-l-title.t-tdn.products__link(href=`#`) Как купить пай?
 
     p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consequuntur, ex ipsam distinctio similique accusantium illum quo quod neque, tenetur ipsum. Repellat esse suscipit qui sit corrupti reiciendis, quibusdam maxime?
     p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consequuntur, ex ipsam distinctio similique accusantium illum quo quod neque, tenetur ipsum. Repellat esse suscipit qui sit corrupti reiciendis, quibusdam maxime?
