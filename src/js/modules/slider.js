@@ -3,9 +3,10 @@ import Swiper from 'swiper';
 
 window.addEventListener(`DOMContentLoaded`, () => {
   const sliderTop = document.querySelector(`.slider-top`);
-  const sliderMain = document.querySelector(`.slider-main`);
+  const slidersMain = document.querySelectorAll(`.slider-main`);
+  const sliderInvestments = document.querySelector(`.investments__slider`);
   let sliderTopSwiper;
-  let sliderMainSwiper;
+  let sliderMainSwipers;
 
   const sliderTopSwiperParams = {
     slidesPerView: 1,
@@ -60,24 +61,27 @@ window.addEventListener(`DOMContentLoaded`, () => {
     sliderTopSwiper = new Swiper(sliderTop, sliderTopSwiperParams);
   }
 
-  if (sliderMain) {
-    sliderMainSwiper = new Swiper(sliderMain, sliderMainSwiperParams);
+  if (slidersMain) {
+    sliderMainSwipers = new Swiper(slidersMain, sliderMainSwiperParams);
   }
 
   if (window.innerWidth >= 1024) {
-    sliderMainSwiper.destroy();
+    sliderMainSwipers.forEach((it) => it.destroy());
   }
 
   window.addEventListener(`resize`, () => {
     if (window.innerWidth >= 1024) {
-      if (sliderMainSwiper.initialized) {
-        sliderMainSwiper.destroy();
-      }
+      sliderMainSwipers.forEach((it) => {
+        if (it.initialized) {
+          it.destroy();
+        }
+      });
     } else {
-      if (!sliderMainSwiper.initialized) {
-        sliderMainSwiper = new Swiper(sliderMain, sliderMainSwiperParams);
-      }
+      sliderMainSwipers.forEach((it) => {
+        if (!it.initialized) {
+          it = new Swiper(slidersMain, sliderMainSwiperParams);
+        }
+      });
     }
-    console.log(sliderMainSwiper.initialized);
   });
 });

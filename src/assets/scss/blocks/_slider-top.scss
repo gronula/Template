@@ -36,12 +36,12 @@
 
   @include respond-min(tablet) {
     padding-bottom: 9.5rem;
-    padding-left: 18rem;
+    padding-left: 20vw;
     padding-right: 7rem;
 
     &::before,
     &::after {
-      left: 18rem;
+      left: 20vw;
       right: 7rem;
     }
   }
@@ -121,7 +121,7 @@
     position: absolute;
     z-index: 1;
     top: 4.75rem;
-    left: 18rem;
+    left: 20vw;
     right: 7rem;
     align-items: center;
     color: $green;
