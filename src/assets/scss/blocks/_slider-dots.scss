@@ -31,6 +31,7 @@ $circle-radius: 25;
   margin-bottom: 1.5rem;
   margin-right: 1.5em;
   padding: 1rem;
+  color: currentColor;
   border: 0;
   background-color: transparent;
   opacity: 0.5;
@@ -44,7 +45,7 @@ $circle-radius: 25;
 
   circle {
     fill: transparent;
-    stroke: $green;
+    stroke: currentColor;
     stroke-dasharray: get-dash-value($circle-radius, 100%);
     stroke-width: 50;
     transform-origin: 50% 50%;

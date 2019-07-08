@@ -1,21 +1,22 @@
 mixin article({className, date, type, image, title, text, btn})
   article.article(class=className)
-    header.article__header
-      if date
-        time.clr-black.t-l-caption.article__date(datetime=date)= date
+    a.t-tdn.article__link(href=`#`)
+      header.article__header
+        if date
+          time.clr-black.t-l-caption.article__date(datetime=date)= date
 
-      if type
-        p.t-l-caption.article__type= type
+        if type
+          p.t-l-caption.article__type= type
 
-    .article__content
-      if image
-        +picture(image)
+      .article__content
+        if image
+          +picture(image)
 
-      if title
-        h4.clr-black.t-h4.article__title= title
+        if title
+          h4.clr-black.t-h4.article__title= title
 
-      if text
-        p.clr-text.article__text= text
+        if text
+          p.clr-text.article__text= text
 
     if btn
       +btn(btn)

@@ -23,11 +23,17 @@
 }
 
 .slider-arrows__arrow {
-  width: 3.75rem;
-  height: 3.75rem;
-  border-radius: 50%;
-  background-color: rgba($green, 0.5);
+  // border-radius: 50%;
   transition: $trs;
+
+  .slider-arrows--fill & {
+    // color: currentColor;
+    // background-color: currentColor;
+  }
+
+  .slider-arrows--plain & {
+    // background-color: transparent;
+  }
 
   &--prev {
     margin-right: 0.625rem;
@@ -35,25 +41,25 @@
   }
 
   &:hover {
-    background-color: $green;
+    // background-color: $green;
   }
 
   .btn__circle {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    color: $white;
+    // position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // width: 100%;
+    // height: 100%;
+    // color: $white;
   }
 
-  .btn__arrow {
-    left: 1.2rem;
-    width: 1rem;
-  }
+  // .btn__arrow {
+  //   left: 1.2rem;
+  //   width: 1rem;
+  // }
 
-  .btn__triangle {
-    right: 1.2rem;
-  }
+  // .btn__triangle {
+  //   right: 1.2rem;
+  // }
 }

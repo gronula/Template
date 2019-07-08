@@ -26,6 +26,7 @@
   }
 
   &--fill {
+    justify-content: center;
     padding: 2rem 3.5rem;
     background: currentColor;
     border-radius: 50px;
@@ -42,45 +43,63 @@
       background-color: #dd044b;
     }
   }
+
+  &--big {
+    @include respond-min(tablet) {
+      padding: 0;
+      color: currentColor;
+      background-color: transparent;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+  }
 }
 
 .btn__circle {
+  position: relative;
   display: none;
 
   .btn--plain & {
-    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 4rem;
     height: 4rem;
     margin-right: 2rem;
     background-color: transparent;
-    border-radius: 50%;
-    border: 0.25rem solid currentColor;
-    transition: $trs;
   }
 
   .btn--plain:hover & {
-    border-color: transparent;
-
     &::before {
       background-color: currentColor;
       transform: translate(-50%, -50%) scale(1.2);
     }
+
+    &::after {
+      border-color: transparent;
+    }
   }
 
-  &::before {
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 4rem;
-    height: 4rem;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background-color: transparent;
     transition: $trs;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  &::after {
+    border: 0.25rem solid currentColor;
   }
 
   @include respond-min(tablet) {
@@ -88,37 +107,86 @@
       width: 2.75rem;
       height: 2.75rem;
       margin-right: 1.125rem;
-      border-width: 0.125rem;
     }
 
-    &::before {
-      width: 2.75rem;
-      height: 2.75rem;
+    .btn--big & {
+      display: flex;
+      width: 3.75rem;
+      height: 3.75rem;
+      margin-right: 0;
+
+      &::after {
+        opacity: 0.5;
+      }
+    }
+
+    .btn--fill.btn--big & {
+      &::after {
+        background-color: currentColor;
+      }
+    }
+
+    .btn.disabled & {
+      &::after {
+        background-color: currentColor;
+      }
+    }
+
+    .btn--big:hover & {
+      &::before {
+        transform: translate(-50%, -50%) scale(0);
+      }
+
+      &::after {
+        opacity: 1;
+        background-color: currentColor;
+      }
+    }
+
+    &::after {
+      border-width: 0.125rem;
     }
   }
 }
 
 .btn__arrow {
   position: absolute;
+  z-index: 1;
   top: 50%;
-  left: 0.7rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: 1rem;
+
+  @include respond-min(tablet) {
+    width: 1.25rem;
+    height: 0.5rem;
+
+    .btn--fill.btn--big & {
+      color: $white;
+    }
+
+    .btn.disabled & {
+      color: $white;
+    }
+  }
+}
+
+.btn__line {
+  position: absolute;
+  top: 50%;
+  left: 0;
   transform: translateY(-50%);
-  width: 1.6rem;
+  width: 80%;
   height: 0.25rem;
   background-color: currentColor;
   transition: $trs;
 
   .btn--plain:hover & {
     background-color: $white;
-
-    &::before {
-      border-left-color: $white;
-    }
   }
 
   @include respond-min(tablet) {
-    left: 0.6rem;
-    width: 1rem;
     height: 0.125rem;
   }
 }
@@ -126,12 +194,12 @@
 .btn__triangle {
   position: absolute;
   top: 50%;
-  right: 0.6rem;
+  right: 0;
+  transform: translateY(-50%);
   width: 0;
   height: 0;
-  transform: translateY(-50%);
   border-style: solid;
-  border-width: 0.4rem 0 0.4rem 0.8rem;
+  border-width: 0.35rem 0 0.35rem 0.7rem;
   border-color: transparent transparent transparent currentColor;
   transition: $trs;
 
@@ -140,7 +208,6 @@
   }
 
   @include respond-min(tablet) {
-    right: 0.5rem;
     border-width: 0.25rem 0 0.25rem 0.5rem;
   }
 }

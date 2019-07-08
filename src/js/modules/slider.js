@@ -2,13 +2,16 @@ import 'swiper/dist/css/swiper.min.css';
 import Swiper from 'swiper';
 
 window.addEventListener(`DOMContentLoaded`, () => {
-  const sliderTop = document.querySelector(`.slider-top`);
-  const slidersMain = document.querySelectorAll(`.slider-main`);
-  const sliderInvestments = document.querySelector(`.investments__slider`);
-  let sliderTopSwiper;
-  let sliderMainSwipers;
+  const bannersSlider = document.querySelector(`.banners__slider`);
+  const productsSlider = document.querySelector(`.products__slider`);
+  const investmentsSlider = document.querySelector(`.investments__slider`);
+  const newsSlider = document.querySelector(`.news__slider`);
+  let bannersSwiper;
+  let productsSwiper;
+  let investmentsSwiper;
+  let newsSwiper;
 
-  const sliderTopSwiperParams = {
+  const bannersSwiperParams = {
     slidesPerView: 1,
     loop: true,
     loopAdditionalSlides: 3,
@@ -18,8 +21,8 @@ window.addEventListener(`DOMContentLoaded`, () => {
       disableOnInteraction: false,
     },
     navigation: {
-      nextEl: '.slider-arrows__arrow--next',
-      prevEl: '.slider-arrows__arrow--prev',
+      nextEl: `.banners .slider-arrows__arrow--next`,
+      prevEl: `.banners .slider-arrows__arrow--prev`,
     },
     pagination: {
       el: '.slider-dots',
@@ -49,7 +52,7 @@ window.addEventListener(`DOMContentLoaded`, () => {
     }
   };
 
-  const sliderMainSwiperParams = {
+  const productsSwiperParams = {
     slidesPerView: 'auto',
     loop: false,
     autoplay: false,
@@ -57,31 +60,62 @@ window.addEventListener(`DOMContentLoaded`, () => {
     pagination: false,
   };
 
-  if (sliderTop) {
-    sliderTopSwiper = new Swiper(sliderTop, sliderTopSwiperParams);
+  const investmentsSwiperParams = {
+    slidesPerView: 'auto',
+    loop: false,
+    autoplay: false,
+    navigation: false,
+    pagination: false,
+  };
+
+  const newsSwiperParams = {
+    slidesPerView: 'auto',
+    loop: false,
+    autoplay: false,
+    navigation: {
+      nextEl: `.news .slider-arrows__arrow--next`,
+      prevEl: `.news .slider-arrows__arrow--prev`,
+      disabledClass: `disabled`,
+    },
+    pagination: false,
+  };
+
+  if (bannersSlider) {
+    bannersSwiper = new Swiper(bannersSlider, bannersSwiperParams);
   }
 
-  if (slidersMain) {
-    sliderMainSwipers = new Swiper(slidersMain, sliderMainSwiperParams);
+  if (productsSlider) {
+    productsSwiper = new Swiper(productsSlider, productsSwiperParams);
+  }
+
+  if (investmentsSlider) {
+    investmentsSwiper = new Swiper(investmentsSlider, investmentsSwiperParams);
+  }
+
+  if (newsSlider) {
+    newsSwiper = new Swiper(newsSlider, newsSwiperParams);
   }
 
   if (window.innerWidth >= 1024) {
-    sliderMainSwipers.forEach((it) => it.destroy());
+    productsSwiper.destroy();
+    investmentsSwiper.destroy();
   }
 
   window.addEventListener(`resize`, () => {
     if (window.innerWidth >= 1024) {
-      sliderMainSwipers.forEach((it) => {
-        if (it.initialized) {
-          it.destroy();
-        }
-      });
+      if (productsSwiper.initialized) {
+        productsSwiper.destroy();
+      }
+      if (investmentsSwiper.initialized) {
+        investmentsSwiper.destroy();
+      }
     } else {
-      sliderMainSwipers.forEach((it) => {
-        if (!it.initialized) {
-          it = new Swiper(slidersMain, sliderMainSwiperParams);
-        }
-      });
+      if (!productsSwiper.initialized) {
+        productsSwiper = new Swiper(productsSlider, productsSwiperParams);
+      }
+      if (!investmentsSwiper.initialized) {
+        investmentsSwiper = new Swiper(investmentsSlider, investmentsSwiperParams);
+      }
     }
   });
 });

@@ -147,6 +147,7 @@
 .main-nav__block {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   margin-bottom: 3.75rem;
 
   @include respond-min(tablet) {
@@ -164,7 +165,6 @@
 .main-nav__sublist {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
   margin-bottom: 3.75rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -234,6 +234,7 @@
 }
 
 .main-nav__info {
+  flex-shrink: 0;
   padding-top: 5rem;
   padding-bottom: 5rem;
 
@@ -249,6 +250,7 @@
 }
 
 .main-nav__banner {
+  flex-shrink: 0;
   padding-top: 5rem;
   padding-bottom: 5rem;
   padding-left: 2.5rem;

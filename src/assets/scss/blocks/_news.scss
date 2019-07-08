@@ -5,22 +5,70 @@
   margin-bottom: 10rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+
+  @include respond-min(tablet) {
+    margin-bottom: 7.5rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+  }
 }
 
 .news__header {
+  position: relative;
   margin-bottom: 5rem;
+
+  @include respond-min(tablet) {
+    margin-bottom: 8.25rem;
+    margin-left: 18rem;
+  }
 }
 
 .news__caption {
   margin-bottom: 1.25rem;
+
+  @include respond-min(tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.news__arrows {
+  @include respond-min(tablet) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.news__slider .swiper-wrapper {
+  @include respond-min(tablet) {
+    flex-wrap: nowrap;
+  }
 }
 
 .news__slider {
   overflow: visible;
   margin-bottom: 7.5rem;
+
+  @include respond-min(tablet) {
+    margin-bottom: 5.3125rem;
+  }
 }
 
 .news__slide {
   padding-top: 0;
   padding-bottom: 0;
+
+  @include respond-min(tablet) {
+    width: 30.4%;
+    margin-right: 3.375rem;
+    padding-bottom: 0;
+  }
+}
+
+.news__btn {
+  min-width: 18.75rem;
+
+  @include respond-min(tablet) {
+    min-width: 13.75rem;
+  }
 }

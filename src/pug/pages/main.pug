@@ -47,7 +47,7 @@ block variables
         },],
         pagesClass: `slider-pages--desktop`,
         dotsClass: `slider-dots--all`,
-        arrowsClass: `slider-arrows--desktop`,
+        arrowsClass: `slider-arrows--desktop slider-arrows--fill`,
       },
       products: {
         slides: [{
@@ -319,9 +319,10 @@ block variables
 
 block content
   +header
+
   main
     section.banners.bg-l-grey
-      +slider-top(``, sliders.banners)
+      +slider-top(`banners__slider clr-green`, sliders.banners)
 
     section.products.bg-l-grey
       header.products__header
@@ -363,13 +364,13 @@ block content
 
         if sliders.news.arrowsClass
           +slider-arrows({
-            classNames: [sliders.news.arrowsClass, `news__arrows`],
+            classNames: [sliders.news.arrowsClass, `news__arrows clr-green`],
             btns: [{
               btnText: ``,
-              btnClass: `slider-arrows__arrow slider-arrows__arrow--prev`,
+              btnClass: `btn--plain btn--big slider-arrows__arrow slider-arrows__arrow--prev`,
             }, {
               btnText: ``,
-              btnClass: `slider-arrows__arrow slider-arrows__arrow--next`,
+              btnClass: `btn--plain btn--big slider-arrows__arrow slider-arrows__arrow--next`,
             }],
           })
 
@@ -384,3 +385,5 @@ block content
         btnText: `Все новости`,
           btnClass: `btn--fill btn--black news__btn`,
       })
+
+  +footer

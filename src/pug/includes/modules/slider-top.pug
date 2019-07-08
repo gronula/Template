@@ -15,7 +15,7 @@ mixin slider-top(className, {slides, pagesClass, dotsClass, arrowsClass})
 
     if pagesClass
       +slider-pages({
-        classNames: [pagesClass, `slider-top__pages clr-green`],
+        classNames: [pagesClass, `slider-top__pages`],
         slidesLength: slides.length,
       })
 
@@ -29,9 +29,9 @@ mixin slider-top(className, {slides, pagesClass, dotsClass, arrowsClass})
         classNames: [arrowsClass, `slider-top__arrows`],
         btns: [{
           btnText: ``,
-          btnClass: `slider-arrows__arrow slider-arrows__arrow--prev`
+          btnClass: `btn--fill btn--big slider-arrows__arrow slider-arrows__arrow--prev`
         }, {
           btnText: ``,
-          btnClass: `slider-arrows__arrow slider-arrows__arrow--next`
+          btnClass: `btn--fill btn--big slider-arrows__arrow slider-arrows__arrow--next`
         }],
       })
