@@ -1,0 +1,8 @@
+mixin slider-pages({classNames, slidesLength})
+  .slider-pages(class=classNames)
+    span.slider-pages__page.slider-pages__page--current 01
+    span.slider-pages__timeline
+    if slidesLength < 10
+      span.slider-pages__page.slider-pages__page--last 0#{slidesLength}
+    else
+      span.slider-pages__page.slider-pages__page--last= slidesLength

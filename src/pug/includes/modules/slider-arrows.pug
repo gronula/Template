@@ -1,0 +1,5 @@
+mixin slider-arrows({classNames, btns})
+  .slider-arrows(class=classNames)
+    if btns
+      each btn in btns
+        +btn(btn)

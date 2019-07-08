@@ -18,13 +18,13 @@ window.addEventListener(`DOMContentLoaded`, () => {
       disableOnInteraction: false,
     },
     navigation: {
-      nextEl: '.slider-top__arrow--next',
-      prevEl: '.slider-top__arrow--prev',
+      nextEl: '.slider-arrows__arrow--next',
+      prevEl: '.slider-arrows__arrow--prev',
     },
     pagination: {
-      el: '.slider-top__dots',
+      el: '.slider-dots',
       clickable: true,
-      bulletClass: `slider-top__dot`,
+      bulletClass: `slider-dots__dot`,
       bulletActiveClass: `active`,
       renderBullet: function (index, className) {
         return `
@@ -44,7 +44,7 @@ window.addEventListener(`DOMContentLoaded`, () => {
       },
       slideChange: function () {
         const currentIndex = this.realIndex < 10 ? `0${this.realIndex + 1}` : `${this.realIndex + 1}`;
-        this.el.querySelector(`.slider-top__page--current`).textContent = currentIndex;
+        this.el.querySelector(`.slider-pages__page--current`).textContent = currentIndex;
       }
     }
   };

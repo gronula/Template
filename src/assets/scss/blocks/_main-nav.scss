@@ -52,7 +52,6 @@
   font-size: 2.25rem;
   line-height: 1.4;
   text-decoration: none;
-  color: $black;
   transition: $trs;
 
   &::after {
@@ -118,7 +117,6 @@
   right: 0;
   display: flex;
   flex-direction: column;
-  background-color: $white;
   transition: $trs;
   transform: translateX(-100%);
   -webkit-overflow-scrolling: touch;
@@ -137,7 +135,6 @@
     pointer-events: none;
     transform: translateX(0) scaleY(1);
     transform-origin: 50% 0;
-    background-color: $white;
 
     .main-nav__item.hovered & {
       opacity: 1;
@@ -202,7 +199,6 @@
   font-size: 2rem;
   line-height: 1.4;
   text-decoration: none;
-  color: $black;
 
   @include respond-min(tablet) {
     @include font('m');
@@ -227,7 +223,6 @@
   line-height: 1.17;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: $text-color;
 
   @include respond-min(tablet) {
     margin-bottom: 1.25rem;

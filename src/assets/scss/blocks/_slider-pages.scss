@@ -1,0 +1,42 @@
+.slider-pages {
+  display: none;
+  align-items: center;
+
+  &--mobile {
+    display: flex;
+
+    @include respond-min(tablet) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include respond-min(tablet) {
+      display: flex;
+    }
+  }
+
+  &--all {
+    display: flex;
+  }
+}
+
+.slider-pages__page {
+  @include font('b');
+  font-size: 0.75rem;
+  color: currentColor;
+
+  &--current {
+    color: $white;
+  }
+}
+
+.slider-pages__timeline {
+  width: 1.875rem;
+  height: 1px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  background-color: currentColor;
+}

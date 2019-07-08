@@ -36,12 +36,12 @@
 
   @include respond-min(tablet) {
     padding-bottom: 9.5rem;
-    padding-left: 20vw;
+    padding-left: 18rem;
     padding-right: 7rem;
 
     &::before,
     &::after {
-      left: 20vw;
+      left: 18rem;
       right: 7rem;
     }
   }
@@ -64,7 +64,6 @@
   @include font('m');
   margin-top: 0;
   margin-bottom: 2rem;
-  color: $white;
 
   @include respond-min(tablet) {
     font-size: 3.125rem;
@@ -74,18 +73,8 @@
 .slider-top__text {
   margin-bottom: 5.5rem;
 
-  p {
-    font-size: 1.75rem;
-    line-height: 1.4;
-    color: $white;
-  }
-
   @include respond-min(tablet) {
     margin-bottom: 3rem;
-
-    p {
-      font-size: 1.125rem;
-    }
   }
 }
 
@@ -95,55 +84,13 @@
 }
 
 .slider-top__pages {
-  display: none;
-
-  &--mobile {
-    display: flex;
-
-    @include respond-min(tablet) {
-      display: none;
-    }
-  }
-
-  &--desktop {
-    display: none;
-
-    @include respond-min(tablet) {
-      display: flex;
-    }
-  }
-
-  &--all {
-    display: flex;
-  }
-
   @include respond-min(tablet) {
     position: absolute;
     z-index: 1;
     top: 4.75rem;
-    left: 20vw;
+    left: 18rem;
     right: 7rem;
-    align-items: center;
-    color: $green;
   }
-}
-
-.slider-top__page {
-  @include font('b');
-  font-size: 0.75rem;
-  color: $green;
-
-  &--current {
-    color: $white;
-  }
-}
-
-.slider-top__timeline {
-  width: 1.875rem;
-  height: 1px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  background-color: $green;
 }
 
 .slider-top__dots {
@@ -152,28 +99,6 @@
   bottom: 0 !important;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  display: none;
-  flex-wrap: wrap;
-
-  &--mobile {
-    display: flex;
-
-    @include respond-min(tablet) {
-      display: none;
-    }
-  }
-
-  &--desktop {
-    display: none;
-
-    @include respond-min(tablet) {
-      display: flex;
-    }
-  }
-
-  &--all {
-    display: flex;
-  }
 
   @include respond-min(tablet) {
     margin-bottom: 2.75rem;
@@ -181,141 +106,11 @@
   }
 }
 
-$circle-radius: 25;
-
-.slider-top__dot {
-  width: 4rem;
-  height: 4rem;
-  margin-bottom: 1.5rem;
-  margin-right: 1.5em;
-  padding: 1rem;
-  border: 0;
-  background-color: transparent;
-  opacity: 0.5;
-  cursor: pointer;
-  transition: $trs;
-
-  svg {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  circle {
-    fill: transparent;
-    stroke: $green;
-    stroke-dasharray: get-dash-value($circle-radius, 100%);
-    stroke-width: 50;
-    transform-origin: 50% 50%;
-    transform: rotate(-90deg);
-
-    .slider-top:active .slider-top__dots &,
-    .slider-top__dots:active & {
-      animation: none;
-    }
-  }
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &.active {
-    opacity: 1;
-
-    circle {
-      animation-name: circle-animation;
-      animation-duration: 6s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      animation-play-state: running;
-    }
-  }
-
-  @include respond-min(tablet) {
-    width: 2rem;
-    height: 2rem;
-    margin-bottom: 0.65rem;
-    margin-right: 0.875rem;
-    padding: 0.5rem;
-
-    svg {
-      width: 1rem;
-      height: 1rem;
-    }
-  }
-}
-
-@keyframes circle-animation {
-  0% { stroke-dashoffset: get-dash-value($circle-radius, 0%); }
-  100% { stroke-dashoffset: get-dash-value($circle-radius, 100%); }
-}
-
 .slider-top__arrows {
-  display: none;
-
-  &--mobile {
-    display: flex;
-
-    @include respond-min(tablet) {
-      display: none;
-    }
-  }
-
-  &--desktop {
-    display: none;
-
-    @include respond-min(tablet) {
-      display: flex;
-    }
-  }
-
-  &--all {
-    display: flex;
-  }
-
   @include respond-min(tablet) {
     position: absolute;
     z-index: 1;
     bottom: 2.5rem;
     right: 7rem;
-  }
-}
-
-.slider-top__arrow {
-  width: 3.75rem;
-  height: 3.75rem;
-  border-radius: 50%;
-  background-color: rgba($green, 0.5);
-  transition: $trs;
-
-  &--prev {
-    margin-right: 0.625rem;
-    transform: rotate(180deg);
-  }
-
-  &:hover {
-    background-color: $green;
-  }
-
-  .btn__circle {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    color: $white;
-  }
-
-  .btn__arrow {
-    left: 1.2rem;
-    width: 1rem;
-  }
-
-  .btn__triangle {
-    right: 1.2rem;
   }
 }

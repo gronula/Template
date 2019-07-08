@@ -10,13 +10,13 @@ mixin slider-main(className, {slides, pagesClass, dotsClass, arrowsClass})
             if slide.stats
               .slider-main__stats
                 .slider-main__stats-value.slider-main__stats-value--risk(class=`slider-main__stats-value--${slide.stats.risk}`)
-                  p.t-l-caption.slider-main__stats-name Риск
+                  p.clr-black.t-l-caption.slider-main__stats-name Риск
                   span.slider-main__stats-scale
                     - for (let i = 0; i < slide.stats.max; i++)
                       span.slider-main__stats-cell
 
                 .slider-main__stats-value.slider-main__stats-value--profit(class=`slider-main__stats-value--${slide.stats.profit}`)
-                  p.t-l-caption.slider-main__stats-name Доходность
+                  p.clr-black.t-l-caption.slider-main__stats-name Доходность
                   span.slider-main__stats-scale
                     - for (let i = 0; i < slide.stats.max; i++)
                       span.slider-main__stats-cell

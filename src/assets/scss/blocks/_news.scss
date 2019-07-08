@@ -1,0 +1,26 @@
+.news {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.news__header {
+  margin-bottom: 5rem;
+}
+
+.news__caption {
+  margin-bottom: 1.25rem;
+}
+
+.news__slider {
+  overflow: visible;
+  margin-bottom: 7.5rem;
+}
+
+.news__slide {
+  padding-top: 0;
+  padding-bottom: 0;
+}

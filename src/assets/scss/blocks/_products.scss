@@ -20,13 +20,12 @@
 
   @include respond-min(tablet) {
     margin-bottom: 5rem;
-    margin-left: 20vw;
+    margin-left: 18rem;
   }
 }
 
 .products__caption {
   margin-bottom: 1rem;
-  color: $red;
 
   @include respond-min(tablet) {
     margin-bottom: 1.5rem;
@@ -74,7 +73,6 @@
   align-self: flex-start;
   margin-bottom: 2.5rem;
   padding-right: 4rem;
-  color: $black;
 
   &:last-child {
     margin-bottom: 0;

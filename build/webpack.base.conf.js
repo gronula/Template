@@ -25,7 +25,7 @@ module.exports = {
     paths: PATHS
   },
   entry: {
-    bundle: PATHS.src
+    main: `${PATHS.src}/js/pages/main`,
   },
   output: {
     filename: `${PATHS.assets}/js/[name].[hash].js`,
@@ -35,10 +35,18 @@ module.exports = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        vendor: {
+        vendors: {
           name: 'vendors',
-          test: /node_modules/,
           chunks: 'all',
+          test: /node_modules/,
+          priority: 20
+        },
+        common: {
+          name: 'common',
+          minChunks: fs.readdirSync(`${PATHS.src}/js/pages`).length,
+          chunks: 'all',
+          priority: 10,
+          reuseExistingChunk: true,
           enforce: true
         }
       }
@@ -107,7 +115,7 @@ module.exports = {
       'window.jQuery': 'jquery'
     }),
     new MiniCssExtractPlugin({
-      filename: `${PATHS.assets}/css/[name].[hash].css`,
+      filename: `${PATHS.assets}/css/style.[hash].css`,
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}/img`, to: `${PATHS.assets}/img` },
@@ -121,7 +129,7 @@ module.exports = {
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug$/i,'.html')}`,
-      inject: true
+      chunks: [`${page.replace(/\.pug/,'')}`, `common`, `vendors`],
     }))
   ],
 };

@@ -30,12 +30,8 @@
 }
 
 .investments__text {
-  font-size: 1.75rem;
-  line-height: 1.4;
-
   @include respond-min(tablet) {
     margin-right: 20rem;
-    font-size: 1.125rem;
   }
 }
 

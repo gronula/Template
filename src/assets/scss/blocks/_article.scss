@@ -1,0 +1,37 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.article__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.article__content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 2.625rem;
+  padding-top: 3.25rem;
+  padding-bottom: 2.5rem;
+  border-top: 3px solid currentColor;
+  border-bottom: 1px solid $black;
+}
+
+.article__title {
+  margin-bottom: 2.5rem;
+}
+
+.article__text {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.article__btn {
+  margin-top: auto;
+}

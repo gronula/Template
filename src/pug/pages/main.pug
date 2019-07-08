@@ -4,55 +4,50 @@ block variables
   -
     const sliders = {
       banners: {
-        slides: [
-          {
-            title: `Мировые акции`,
-            text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
-            image: {
-              minWidth: `1024px`,
-              desktopName: `slider-top-desktop-01`,
-              mobileName: `slider-top-mobile-01`,
-              imgClass: `slider-top__image`,
-              alt: `Мировые акции`,
-            },
+        slides: [{
+          title: `Мировые акции`,
+          text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
+          image: {
+            minWidth: `1024px`,
+            desktopName: `slider-top-desktop-01`,
+            mobileName: `slider-top-mobile-01`,
+            imgClass: `slider-top__image`,
+            alt: `Мировые акции`,
           },
-          {
-            title: `Мировые акции 2`,
-            text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
-            image: {
-              minWidth: `1024px`,
-              desktopName: `slider-top-desktop-01`,
-              mobileName: `slider-top-mobile-01`,
-              imgClass: `slider-top__image`,
-              alt: `Мировые акции 2`,
-            },
+        }, {
+          title: `Мировые акции 2`,
+          text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
+          image: {
+            minWidth: `1024px`,
+            desktopName: `slider-top-desktop-01`,
+            mobileName: `slider-top-mobile-01`,
+            imgClass: `slider-top__image`,
+            alt: `Мировые акции 2`,
           },
-          {
-            title: `Мировые акции 3`,
-            text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
-            image: {
-              minWidth: `1024px`,
-              desktopName: `slider-top-desktop-01`,
-              mobileName: `slider-top-mobile-01`,
-              imgClass: `slider-top__image`,
-              alt: `Мировые акции 3`,
-            },
+        }, {
+          title: `Мировые акции 3`,
+          text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
+          image: {
+            minWidth: `1024px`,
+            desktopName: `slider-top-desktop-01`,
+            mobileName: `slider-top-mobile-01`,
+            imgClass: `slider-top__image`,
+            alt: `Мировые акции 3`,
           },
-          {
-            title: `Мировые акции 4`,
-            text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
-            image: {
-              minWidth: `1024px`,
-              desktopName: `slider-top-desktop-01`,
-              mobileName: `slider-top-mobile-01`,
-              imgClass: `slider-top__image`,
-              alt: `Мировые акции 4`,
-            },
+        }, {
+          title: `Мировые акции 4`,
+          text: `При формировании инвестиционного портфеля управляющий ориентируется на индекс MSCI World и не отклоняется от него существенно`,
+          image: {
+            minWidth: `1024px`,
+            desktopName: `slider-top-desktop-01`,
+            mobileName: `slider-top-mobile-01`,
+            imgClass: `slider-top__image`,
+            alt: `Мировые акции 4`,
           },
-        ],
-        pagesClass: `slider-top__pages--desktop`,
-        dotsClass: `slider-top__dots--all`,
-        arrowsClass: `slider-top__arrows--desktop`,
+        },],
+        pagesClass: `slider-pages--desktop`,
+        dotsClass: `slider-dots--all`,
+        arrowsClass: `slider-arrows--desktop`,
       },
       products: {
         slides: [{
@@ -133,7 +128,7 @@ block variables
               btnText: `Подробнее`,
               btnClass: `btn--plain btn--red slider-main__btn`,
             },
-        }],
+        },],
       },
       investments: {
         slides: [{
@@ -178,7 +173,110 @@ block variables
             btnText: `Подробнее`,
             btnClass: `btn--plain btn--black investments__btn`,
           },
-        }],
+        },],
+      },
+      news: {
+        slides: [{
+          className: `clr-red`,
+          date: `2019-03-21`,
+          type: `Новость`,
+          image: ``,
+          title: `Внесены изменения в тарифы на оказание брокерских и депозитарных услуг ИК ДОХОДЪ`,
+          text: `Изменения вступают в силу с 1 марта 2019 года`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        }, {
+          className: `clr-blue`,
+          date: `2019-03-21`,
+          type: `Публикация`,
+          image: ``,
+          title: `ЗПИФы для финансирования строительства. Альтернатива 214-ФЗ`,
+          text: `Генеральный директор Управляющей компании "ДОХОДЪ" рассказала об использовании механизма ЗПИФов для финансирования`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        }, {
+          className: `clr-red`,
+          date: `2019-03-21`,
+          type: `Новость`,
+          image: ``,
+          title: `Внесены изменения в тарифы на оказание брокерских и депозитарных услуг ИК ДОХОДЪ`,
+          text: `Изменения вступают в силу с 1 марта 2019 года`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        }, {
+          className: `clr-blue`,
+          date: `2019-03-21`,
+          type: `Публикация`,
+          image: ``,
+          title: `ЗПИФы для финансирования строительства. Альтернатива 214-ФЗ`,
+          text: `Генеральный директор Управляющей компании "ДОХОДЪ" рассказала об использовании механизма ЗПИФов для финансирования`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        }, {
+          className: `clr-red`,
+          date: `2019-03-21`,
+          type: `Новость`,
+          image: ``,
+          title: `Внесены изменения в тарифы на оказание брокерских и депозитарных услуг ИК ДОХОДЪ`,
+          text: `Изменения вступают в силу с 1 марта 2019 года`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        }, {
+          className: `clr-blue`,
+          date: `2019-03-21`,
+          type: `Публикация`,
+          image: ``,
+          title: `ЗПИФы для финансирования строительства. Альтернатива 214-ФЗ`,
+          text: `Генеральный директор Управляющей компании "ДОХОДЪ" рассказала об использовании механизма ЗПИФов для финансирования`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        }, {
+          className: `clr-red`,
+          date: `2019-03-21`,
+          type: `Новость`,
+          image: ``,
+          title: `Внесены изменения в тарифы на оказание брокерских и депозитарных услуг ИК ДОХОДЪ`,
+          text: `Изменения вступают в силу с 1 марта 2019 года`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        }, {
+          className: `clr-blue`,
+          date: `2019-03-21`,
+          type: `Публикация`,
+          image: ``,
+          title: `ЗПИФы для финансирования строительства. Альтернатива 214-ФЗ`,
+          text: `Генеральный директор Управляющей компании "ДОХОДЪ" рассказала об использовании механизма ЗПИФов для финансирования`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        }, {
+          className: `clr-red`,
+          date: `2019-03-21`,
+          type: `Новость`,
+          image: ``,
+          title: `Внесены изменения в тарифы на оказание брокерских и депозитарных услуг ИК ДОХОДЪ`,
+          text: `Изменения вступают в силу с 1 марта 2019 года`,
+          btn: {
+            btnText: `Подробнее`,
+            btnClass: `btn--plain btn--black article__btn`,
+          },
+        },],
+        arrowsClass: `slider-arrows--desktop`,
       },
     };
 
@@ -216,7 +314,7 @@ block variables
           isSVG: true,
         },
         text: `Членство в профессиональных СРО: НФА, НАУФОР, НЛУ`,
-      }],
+      },],
     };
 
 block content
@@ -227,7 +325,7 @@ block content
 
     section.products.bg-l-grey
       header.products__header
-        p.t-l-title.products__caption Посмотрите наши
+        p.clr-red.t-l-title.products__caption Посмотрите наши
         h2.t-h2.products__title Актуальные продукты
 
       +slider-main(`products__slider`, sliders.products)
@@ -237,15 +335,15 @@ block content
           btnText: `Все ПИФы`,
           btnClass: `btn--fill btn--black products__btn`,
         })
-        a.t-l-title.t-tdn.products__link(href=`#`) Подробнее о ПИФах
-        a.t-l-title.t-tdn.products__link(href=`#`) Как купить пай?
+        a.clr-black.t-l-title.t-tdn.products__link(href=`#`) Подробнее о ПИФах
+        a.clr-black.t-l-title.t-tdn.products__link(href=`#`) Как купить пай?
 
     section.investments
       header.investments__header
         h2.t-h2.investments__title Зачем инвестировать?
         .investments__text
-          p В паевые фонды облигаций можно вкладывать деньги не разбираясь в инвестициях. Такие фонды отлично подходят для начинающих инвесторов.
-          p Материалы из данного раздела помогут вам лучше разобраться в продуктах управляющей компании и сделать правильный выбор.
+          p.t-middle В паевые фонды облигаций можно вкладывать деньги не разбираясь в инвестициях. Такие фонды отлично подходят для начинающих инвесторов.
+          p.t-middle Материалы из данного раздела помогут вам лучше разобраться в продуктах управляющей компании и сделать правильный выбор.
       .investments__slider.slider-main.swiper-container
         .swiper-wrapper
           if sliders.investments.slides.length
@@ -257,3 +355,32 @@ block content
                 +btn(slide.btn)
 
     +advantages(advantages)
+
+    section.news
+      header.news__header
+        p.clr-red.t-l-title.news__caption Самые свежие
+        h2.t-h2.news__title Новости и публикации
+
+        if sliders.news.arrowsClass
+          +slider-arrows({
+            classNames: [sliders.news.arrowsClass, `news__arrows`],
+            btns: [{
+              btnText: ``,
+              btnClass: `slider-arrows__arrow slider-arrows__arrow--prev`,
+            }, {
+              btnText: ``,
+              btnClass: `slider-arrows__arrow slider-arrows__arrow--next`,
+            }],
+          })
+
+      .news__slider.slider-main.swiper-container
+        .swiper-wrapper
+          if sliders.news.slides.length
+            each slide in sliders.news.slides
+              .news__slide.slider-main__slide.swiper-slide
+                +article(slide)
+
+      +btn({
+        btnText: `Все новости`,
+          btnClass: `btn--fill btn--black news__btn`,
+      })

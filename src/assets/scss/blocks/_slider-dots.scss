@@ -1,0 +1,127 @@
+.slider-dots {
+  display: none;
+  flex-wrap: wrap;
+
+  &--mobile {
+    display: flex;
+
+    @include respond-min(tablet) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include respond-min(tablet) {
+      display: flex;
+    }
+  }
+
+  &--all {
+    display: flex;
+  }
+}
+
+$circle-radius: 25;
+
+.slider-dots__dot {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1.5rem;
+  margin-right: 1.5em;
+  padding: 1rem;
+  border: 0;
+  background-color: transparent;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: $trs;
+
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  circle {
+    fill: transparent;
+    stroke: $green;
+    stroke-dasharray: get-dash-value($circle-radius, 100%);
+    stroke-width: 50;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+
+    .slider-dots:active .slider-dots &,
+    .slider-dots:active & {
+      animation: none;
+    }
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.active {
+    opacity: 1;
+
+    circle {
+      animation-name: circle-animation;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+    }
+  }
+
+  @include respond-min(tablet) {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.65rem;
+    margin-right: 0.875rem;
+    padding: 0.5rem;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
+
+@keyframes circle-animation {
+  0% { stroke-dashoffset: get-dash-value($circle-radius, 0%); }
+  100% { stroke-dashoffset: get-dash-value($circle-radius, 100%); }
+}
+
+.slider-dots__arrows {
+  display: none;
+
+  &--mobile {
+    display: flex;
+
+    @include respond-min(tablet) {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include respond-min(tablet) {
+      display: flex;
+    }
+  }
+
+  &--all {
+    display: flex;
+  }
+
+  @include respond-min(tablet) {
+    position: absolute;
+    z-index: 1;
+    bottom: 2.5rem;
+    right: 7rem;
+  }
+}
