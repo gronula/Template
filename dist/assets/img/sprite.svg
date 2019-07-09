@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol viewBox="0 0 42 42" fill="none" id="i-advantages-01">
+      <rect y="6" width="36" height="36" fill="white" />
+      <path d="M0 42L36 6V42H0Z" fill="#919AA6" />
+      <circle cx="34" cy="8" r="8" fill="black" />
+    </symbol>
+    <symbol viewBox="0 0 42 42" fill="none" id="i-advantages-02">
+      <path d="M42 0H28V42H42V0Z" fill="black" />
+      <path d="M28 14H14V42H28V14Z" fill="white" />
+      <path d="M14 28H0V42H14V28Z" fill="#919AA6" />
+    </symbol>
+    <symbol viewBox="0 0 40 47" fill="none" id="i-advantages-03">
+      <path
+        d="M20 47C31.0457 47 40 42.9706 40 38C40 33.0294 31.0457 29 20 29C8.9543 29 0 33.0294 0 38C0 42.9706 8.9543 47 20 47Z"
+        fill="black" />
+      <path
+        d="M20 33C31.0457 33 40 28.9706 40 24C40 19.0294 31.0457 15 20 15C8.9543 15 0 19.0294 0 24C0 28.9706 8.9543 33 20 33Z"
+        fill="#919AA6" />
+      <path
+        d="M20 19C31.0457 19 40 14.7467 40 9.5C40 4.25329 31.0457 0 20 0C8.9543 0 0 4.25329 0 9.5C0 14.7467 8.9543 19 20 19Z"
+        fill="white" />
+    </symbol>
+    <symbol viewBox="0 0 50 50" fill="none" id="i-advantages-04">
+      <path
+        d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50Z"
+        fill="white" />
+      <path
+        d="M25 43C34.9411 43 43 34.9411 43 25C43 15.0589 34.9411 7 25 7C15.0589 7 7 15.0589 7 25C7 34.9411 15.0589 43 25 43Z"
+        fill="#919AA6" />
+      <path d="M50 25C50 11.2 38.8 0 25 0V25H50Z" fill="black" />
+    </symbol>
+    <symbol viewBox="0 0 14 9" fill="none" id="i-arrow">
+      <path d="M14 4.5L7.25 8.39711L7.25 0.602885L14 4.5Z" fill="black" />
+      <line x1="8" y1="4.5" y2="4.5" stroke="black" stroke-width="2" />
+    </symbol>
+    <symbol viewBox="0 0 18 15" fill="none" id="i-burger">
+      <rect width="18" height="3" fill="black" />
+      <rect y="6" width="18" height="3" fill="black" />
+      <rect x="6" y="12" width="12" height="3" fill="black" />
+    </symbol>
+    <symbol viewBox="0 0 18 17" fill="none" id="i-close">
+      <rect x="2.9895" y="0.368286" width="20" height="3" transform="rotate(45 2.9895 0.368286)" fill="black" />
+      <rect x="17.1318" y="2.48962" width="20" height="3" transform="rotate(135 17.1318 2.48962)" fill="black" />
+    </symbol>
+    <symbol viewBox="0 0 210 111" fill="none" id="i-investments-01">
+      <path
+        d="M120.3 110.353C150.675 110.353 175.3 85.7282 175.3 55.3525C175.3 24.9769 150.675 0.352539 120.3 0.352539C89.9241 0.352539 65.2998 24.9769 65.2998 55.3525C65.2998 85.7282 89.9241 110.353 120.3 110.353Z"
+        fill="black" />
+      <path
+        d="M0 110.353C0 110.353 25 70.5 50.5 70.5C65.2 70.5 74.7 81.5 93 81.5C125.7 81.5 136.5 9.50004 166 3.00018C192 -2.72854 210 63.9525 210 110.453L0 110.453V110.353Z"
+        fill="white" />
+      <path
+        d="M120 79C132.15 79 142 69.1503 142 57C142 44.8497 132.15 35 120 35C107.85 35 98 44.8497 98 57C98 69.1503 107.85 79 120 79Z"
+        fill="#AD033B" />
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M108.333 75.6545C117.657 68.2287 125.119 54.7649 132.527 41.3959C132.854 40.8075 133.18 40.2193 133.506 39.6318C138.675 43.6574 142 49.9404 142 56.9999C142 69.1502 132.15 78.9999 120 78.9999C115.714 78.9999 111.715 77.7744 108.333 75.6545Z"
+        fill="#E8C9DB" />
+    </symbol>
+    <symbol viewBox="0 0 200 100" fill="none" id="i-investments-02">
+      <path d="M200 0H0V100H200V0Z" fill="white" />
+      <path d="M200 100H0L200 0V100Z" fill="#919AA6" />
+      <path
+        d="M100 87C120.435 87 137 70.4345 137 50C137 29.5655 120.435 13 100 13C79.5655 13 63 29.5655 63 50C63 70.4345 79.5655 87 100 87Z"
+        fill="#23DEA8" />
+      <path d="M0 34C18.8 34 34 18.8 34 0H0V34Z" fill="black" />
+      <path d="M200 64C180.1 64 164 80.1 164 100H200V64Z" fill="black" />
+    </symbol>
+    <symbol viewBox="0 0 200 83" fill="none" id="i-investments-03">
+      <path d="M67.4033 54.5986H133.546V81.8979H67.4033V54.5986Z" fill="#AD033B" />
+      <path d="M66.7793 28.0793H132.922V55.3787H66.7793V28.0793Z" fill="black" />
+      <path d="M132.921 28.0793H199.064V55.3787H132.921V28.0793Z" fill="white" />
+      <path d="M0.636719 55.3787H66.7791V82.678H0.636719V55.3787Z" fill="white" />
+      <path d="M132.921 0.780029H199.064V28.0793H132.921V0.780029Z" fill="#AD033B" />
+      <path d="M132.921 54.5986H199.064V81.8979H132.921V54.5986Z" fill="black" />
+    </symbol>
+    <symbol viewBox="4.95 0 4.924 9.9" id="i-triangle">
+      <path d="M4.95,0l4.924,4.976L4.95,9.899V0z" />
+    </symbol>
+    <symbol viewBox="0 0 7 7" fill="none" id="i-triangle-grey">
+      <path d="M-4.76837e-07 7L0.0360929 -6.08804e-07L7 0L-4.76837e-07 7Z" fill="#919AA6" />
+    </symbol>
+  </defs>
+</svg>

@@ -45,9 +45,15 @@ block variables
             alt: `Мировые акции 4`,
           },
         },],
-        pagesClass: `slider-pages--desktop`,
-        dotsClass: `slider-dots--all`,
-        arrowsClass: `slider-arrows--desktop slider-arrows--fill`,
+        pages: {
+          className: `only-desktop`,
+        },
+        dots: {
+          className: ``,
+        },
+        arrows: {
+          className: `only-desktop`,
+        },
       },
       products: {
         slides: [{
@@ -134,7 +140,7 @@ block variables
         slides: [{
           className: `bg-l-green`,
           image: {
-            svgName: `investments-01`,
+            svgName: `i-investments-01`,
             imgClass: `investments__image`,
             alt: `Зачем нужно инвестировать и когда начинать?`,
             isSVG: true,
@@ -148,7 +154,7 @@ block variables
         }, {
           className: `bg-l-blue`,
           image: {
-            svgName: `investments-02`,
+            svgName: `i-investments-02`,
             imgClass: `investments__image`,
             alt: `Почему не стоит вкладывать в депозиты, квартиру, валюту?`,
             isSVG: true,
@@ -162,7 +168,7 @@ block variables
         }, {
           className: `bg-l-red`,
           image: {
-            svgName: `investments-03`,
+            svgName: `i-investments-03`,
             imgClass: `investments__image`,
             alt: `Во что лучше инвестировать?`,
             isSVG: true,
@@ -276,7 +282,9 @@ block variables
             btnClass: `btn--plain btn--black article__btn`,
           },
         },],
-        arrowsClass: `slider-arrows--desktop`,
+        arrows: {
+          className: `only-desktop`,
+        },
       },
     };
 
@@ -320,7 +328,7 @@ block variables
 block content
   +header
 
-  main
+  main.page
     section.banners.bg-l-grey
       +slider-top(`banners__slider clr-green`, sliders.banners)
 
@@ -362,15 +370,15 @@ block content
         p.clr-red.t-l-title.news__caption Самые свежие
         h2.t-h2.news__title Новости и публикации
 
-        if sliders.news.arrowsClass
+        if sliders.news.arrows
           +slider-arrows({
-            classNames: [sliders.news.arrowsClass, `news__arrows clr-green`],
+            classNames: [sliders.news.arrows.className, `news__arrows clr-green`],
             btns: [{
               btnText: ``,
-              btnClass: `btn--plain btn--big slider-arrows__arrow slider-arrows__arrow--prev`,
+              btnClass: `btn--fill btn--big slider-arrows__arrow slider-arrows__arrow--prev`,
             }, {
               btnText: ``,
-              btnClass: `btn--plain btn--big slider-arrows__arrow slider-arrows__arrow--next`,
+              btnClass: `btn--fill btn--big slider-arrows__arrow slider-arrows__arrow--next`,
             }],
           })
 

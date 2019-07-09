@@ -5,16 +5,15 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 
 const buildWebpackConfig = merge(baseWebpackConfig, {
-  // BUILD config
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      jpegtran: {
-        progressive: true
-      }
-    }),
+    // new ImageminPlugin({
+    //   test: /\.(jpe?g|png|gif)$/i,
+    //   jpegtran: {
+    //     progressive: true
+    //   }
+    // }),
     new ImageminWebpWebpackPlugin({
       config: [{
         test: /img\/.*\.(jpe?g|png)$/i,

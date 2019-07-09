@@ -1,26 +1,6 @@
 .slider-pages {
-  display: none;
+  display: flex;
   align-items: center;
-
-  &--mobile {
-    display: flex;
-
-    @include respond-min(tablet) {
-      display: none;
-    }
-  }
-
-  &--desktop {
-    display: none;
-
-    @include respond-min(tablet) {
-      display: flex;
-    }
-  }
-
-  &--all {
-    display: flex;
-  }
 }
 
 .slider-pages__page {

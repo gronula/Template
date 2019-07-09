@@ -69,31 +69,58 @@
 .header__menu-toggle-btn {
   position: fixed;
   z-index: 1;
-  top: 2rem;
+  top: calc(2rem + 3px);
   right: 2rem;
-  width: 4rem;
-  height: 4rem;
+  width: calc(2rem + 18px);
+  height: calc(2rem + 15px);
   padding: 1rem;
   font-size: 0;
   background-color: transparent;
   border: 0;
   cursor: pointer;
 
-  &::before {
-    content: '';
+  span {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 2rem;
-    height: 2rem;
-    background: url('/assets/img/i-burger.svg') no-repeat center;
-    background-size: contain;
-    transform: translate(-50%, -50%);
+    right: 1rem;
+    width: 18px;
+    height: 3px;
+    background: $black;
+    opacity: 1;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+
+    &:nth-of-type(1) {
+      top: 1rem;
+    }
+
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+      top: calc(1rem + 6px);
+    }
+
+    &:nth-of-type(4) {
+      top: calc(1rem + 12px);
+      width: 12px;
+    }
   }
 
   .header--opened & {
-    &::before {
-      background-image: url('/assets/img/i-close.svg');
+    span {
+      &:nth-of-type(1),
+      &:nth-of-type(4) {
+        top: calc(1rem + 6px);
+        right: 50%;
+        width: 0;
+        opacity: 0;
+      }
+
+      &:nth-of-type(2) {
+        transform: rotate(45deg);
+      }
+
+      &:nth-of-type(3) {
+        transform: rotate(-45deg);
+      }
     }
   }
 

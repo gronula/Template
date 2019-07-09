@@ -41,12 +41,11 @@
   @include font('m');
   font-size: 2.125rem;
   line-height: 1.2;
-  letter-spacing: 0.07125rem;
+  letter-spacing: 0.02em;
 
   @include respond-min(tablet) {
     font-size: 1.25rem;
     line-height: 1.4;
-    letter-spacing: 0.035625rem;
   }
 }
 
@@ -56,11 +55,10 @@
 .t-small {
   font-size: 1.25rem;
   line-height: 1.465;
-  letter-spacing: 0.07125rem;
+  letter-spacing: 0.02em;
 
   @include respond-min(tablet) {
     font-size: 0.875rem;
-    letter-spacing: 0.035625rem;
   }
 }
 

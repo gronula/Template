@@ -9,12 +9,12 @@ block variables
 
 block content
   style.
-    body { padding: 10px }
-    ol { list-style: decimal; padding-left: 20px }
+    body { padding: 2rem; font-size: 2rem }
+    ol { list-style: decimal; padding-left: 4rem }
 
   main
     h1 Страницы:
     ol
       each page in pages
         li
-          a(href=page.link)= page.title
+          a.clr-black(href=page.link)= `${page.title} — ${page.link}`

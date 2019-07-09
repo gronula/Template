@@ -21,9 +21,10 @@
 @import 'utils/text';
 
 /* Blocks */
-@import 'blocks/media-obj';
+@import 'blocks/page';
 @import 'blocks/header';
 @import 'blocks/main-nav';
+@import 'blocks/media-obj';
 @import 'blocks/logo';
 @import 'blocks/site-nav';
 @import 'blocks/user-nav';
@@ -39,3 +40,4 @@
 @import 'blocks/advantages';
 @import 'blocks/article';
 @import 'blocks/news';
+@import 'blocks/footer';

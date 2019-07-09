@@ -27,3 +27,19 @@ body {
 .no-scroll {
   overflow: hidden !important;
 }
+
+.only-mobile {
+  display: flex !important;
+
+  @include respond-min(tablet) {
+    display: none !important;
+  }
+}
+
+.only-desktop {
+  display: none !important;
+
+  @include respond-min(tablet) {
+    display: flex !important;
+  }
+}

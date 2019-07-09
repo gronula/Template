@@ -13,6 +13,8 @@ window.addEventListener(`DOMContentLoaded`, () => {
   const mainNavLinks = mainNavList.querySelectorAll(`.main-nav__link`);
 
   const menuToggleBtnClickHandler = () => {
+    console.dir(menuToggleBtn);
+
     document.body.classList.toggle(`no-scroll`);
     header.classList.remove(`no-scroll`);
     header.classList.toggle(`header--opened`);

@@ -1,18 +1,25 @@
 .logo {
   display: flex;
-
-  @include respond-min(tablet) {
-    display: flex;
-  }
 }
 
 .logo__link {
   align-self: flex-start;
   flex-shrink: 0;
-  max-width: 14rem;
-  max-height: 4rem;
+  width: 14rem;
+  height: 4rem;
+
+  .logo--footer & {
+    width: 27rem;
+    height: 7.5rem;
+  }
 
   @include respond-min(tablet) {
-    display: flex;
+    width: 13.5rem;
+    height: 3.75rem;
+
+    .logo--footer & {
+      width: 15.625rem;
+      height: 4.375rem;
+    }
   }
 }

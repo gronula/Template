@@ -48,7 +48,7 @@
     height: 20rem;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 0 0 10rem $white;
+    box-shadow: 0 0 0 50vw $white;
     transition: $trs;
   }
 
@@ -66,6 +66,15 @@
     &::before {
       width: 15.625rem;
       height: 15.625rem;
+    }
+  }
+
+  @include respond-min(desktop-xlg) {
+    &:hover {
+      &::before {
+        width: 33vw;
+        height: 33vw;
+      }
     }
   }
 }

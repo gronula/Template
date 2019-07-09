@@ -128,7 +128,7 @@
 
     .btn.disabled & {
       &::after {
-        background-color: currentColor;
+        background-color: $white;
       }
     }
 
@@ -167,7 +167,7 @@
     }
 
     .btn.disabled & {
-      color: $white;
+      color: currentColor;
     }
   }
 }

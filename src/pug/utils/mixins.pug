@@ -1,13 +1,14 @@
 mixin picture(className, {minWidth, desktopName, mobileName, imgClass, alt, isSVG = false, svgName})
   div.media-obj(class=[className, imgClass])
     if isSVG
-      img(src=`/assets/img/${svgName}.svg`, alt=alt)
+      svg
+        use(href=`/assets/img/sprite.svg#${svgName}`)
     else
       picture
         source(
           type=`image/webp`
           media=`(min-width: ${minWidth})`
-          srcset=`/assets/img/${desktopName}@1x.webp 1x, /assets/img/${desktopName}@2x.webp   2x`
+          srcset=`/assets/img/${desktopName}@1x.webp 1x, /assets/img/${desktopName}@2x.webp 2x`
         )
         source(
           type=`image/webp`

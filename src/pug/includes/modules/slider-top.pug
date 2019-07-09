@@ -1,4 +1,4 @@
-mixin slider-top(className, {slides, pagesClass, dotsClass, arrowsClass})
+mixin slider-top(className, {slides, pages, dots, arrows})
   .slider-top.swiper-container(class=className)
     .swiper-wrapper
       if slides.length
@@ -13,20 +13,20 @@ mixin slider-top(className, {slides, pagesClass, dotsClass, arrowsClass})
               btnClass: `btn--fill btn--red slider-top__btn`
             })
 
-    if pagesClass
+    if pages
       +slider-pages({
-        classNames: [pagesClass, `slider-top__pages`],
+        classNames: [pages.className, `slider-top__pages`],
         slidesLength: slides.length,
       })
 
-    if dotsClass
+    if dots
       +slider-dots({
-        classNames: [dotsClass, `slider-top__dots`],
+        classNames: [dots.className, `slider-top__dots`],
       })
 
-    if arrowsClass
+    if arrows
       +slider-arrows({
-        classNames: [arrowsClass, `slider-top__arrows`],
+        classNames: [arrows.className, `slider-top__arrows`],
         btns: [{
           btnText: ``,
           btnClass: `btn--fill btn--big slider-arrows__arrow slider-arrows__arrow--prev`

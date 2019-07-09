@@ -1,11 +1,13 @@
-@mixin bg-responsive($dekstopName, $mobileName, $minWidth) {
+@mixin bg-responsive($dekstopName, $mobileName, $breakpoint) {
   background-image: url('/assets/img/#{$mobileName}@1x.png');
+  background-repeat: no-repeat;
+  background-position: center;
 
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     background-image: url('/assets/img/#{$mobileName}@2x.png');
   }
 
-  @media (min-width: $minWidth) {
+  @media (min-width: $breakpoint) {
     background-image: url('/assets/img/#{$dekstopName}@1x.png');
 
     @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {

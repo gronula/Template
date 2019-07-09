@@ -1,26 +1,6 @@
 .slider-dots {
-  display: none;
+  display: flex;
   flex-wrap: wrap;
-
-  &--mobile {
-    display: flex;
-
-    @include respond-min(tablet) {
-      display: none;
-    }
-  }
-
-  &--desktop {
-    display: none;
-
-    @include respond-min(tablet) {
-      display: flex;
-    }
-  }
-
-  &--all {
-    display: flex;
-  }
 }
 
 $circle-radius: 25;
@@ -94,35 +74,4 @@ $circle-radius: 25;
 @keyframes circle-animation {
   0% { stroke-dashoffset: get-dash-value($circle-radius, 0%); }
   100% { stroke-dashoffset: get-dash-value($circle-radius, 100%); }
-}
-
-.slider-dots__arrows {
-  display: none;
-
-  &--mobile {
-    display: flex;
-
-    @include respond-min(tablet) {
-      display: none;
-    }
-  }
-
-  &--desktop {
-    display: none;
-
-    @include respond-min(tablet) {
-      display: flex;
-    }
-  }
-
-  &--all {
-    display: flex;
-  }
-
-  @include respond-min(tablet) {
-    position: absolute;
-    z-index: 1;
-    bottom: 2.5rem;
-    right: 7rem;
-  }
 }
