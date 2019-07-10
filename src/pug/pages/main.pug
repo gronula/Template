@@ -292,33 +292,29 @@ block variables
       className: `bg-l-blue`,
       items: [{
         image: {
-          svgName: `advantages-01`,
+          svgName: `i-advantages-01`,
           imgClass: `advantages__item-image`,
-          alt: `25 лет на рынке`,
           isSVG: true,
         },
         text: `25 лет на рынке`,
       }, {
         image: {
-          svgName: `advantages-02`,
+          svgName: `i-advantages-02`,
           imgClass: `advantages__item-image`,
-          alt: `Входим в ТОП-5 крупнейших управляющих компаний Северо-Запада`,
           isSVG: true,
         },
         text: `Входим в ТОП-5 крупнейших управляющих компаний Северо-Запада`,
       }, {
         image: {
-          svgName: `advantages-03`,
+          svgName: `i-advantages-03`,
           imgClass: `advantages__item-image`,
-          alt: `Управляем капиталом более чем в 18 млрд. руб.`,
           isSVG: true,
         },
         text: `Управляем капиталом более чем в 18 млрд. руб.`,
       }, {
         image: {
-          svgName: `advantages-04`,
+          svgName: `i-advantages-04`,
           imgClass: `advantages__item-image`,
-          alt: `Членство в профессиональных СРО: НФА, НАУФОР, НЛУ`,
           isSVG: true,
         },
         text: `Членство в профессиональных СРО: НФА, НАУФОР, НЛУ`,
@@ -345,7 +341,15 @@ block content
           btnClass: `btn--fill btn--black products__btn`,
         })
         a.clr-black.t-l-title.t-tdn.products__link(href=`#`) Подробнее о ПИФах
+          +picture(`products__link-arrow`, {
+            isSVG: true,
+            svgName: `i-arrow`,
+          })
         a.clr-black.t-l-title.t-tdn.products__link(href=`#`) Как купить пай?
+          +picture(`products__link-arrow`, {
+            isSVG: true,
+            svgName: `i-arrow`,
+          })
 
     section.investments
       header.investments__header

@@ -3,8 +3,16 @@ mixin main-nav(className)
       ul.main-nav__list
         li.main-nav__item
           a.clr-black.main-nav__link(href=`#`) Физическим лицам
+            +picture(`main-nav__link-triangle`, {
+              isSVG: true,
+              svgName: `i-triangle`,
+            })
           .bg-white.main-nav__content
             a.clr-black.main-nav__link(href=`#`) Физическим лицам
+              +picture(`main-nav__link-triangle`, {
+                isSVG: true,
+                svgName: `i-triangle`,
+              })
 
             .main-nav__block
               ul.main-nav__sublist
@@ -46,8 +54,16 @@ mixin main-nav(className)
 
         li.main-nav__item
           a.clr-black.main-nav__link(href=`#`) Юридическим лицам
+            +picture(`main-nav__link-triangle`, {
+              isSVG: true,
+              svgName: `i-triangle`,
+            })
           .bg-white.main-nav__content
             a.clr-black.main-nav__link(href=`#`) Юридическим лицам
+              +picture(`main-nav__link-triangle`, {
+                isSVG: true,
+                svgName: `i-triangle`,
+              })
 
             .main-nav__block
               ul.main-nav__sublist
@@ -89,8 +105,16 @@ mixin main-nav(className)
 
         li.main-nav__item
           a.clr-black.main-nav__link(href=`#`) Паевые фонды
+            +picture(`main-nav__link-triangle`, {
+              isSVG: true,
+              svgName: `i-triangle`,
+            })
           .bg-white.main-nav__content
             a.clr-black.main-nav__link(href=`#`) Паевые фонды
+              +picture(`main-nav__link-triangle`, {
+                isSVG: true,
+                svgName: `i-triangle`,
+              })
 
             .main-nav__block
               ul.main-nav__sublist

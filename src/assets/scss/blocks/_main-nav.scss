@@ -45,6 +45,8 @@
 
 .main-nav__link {
   position: relative;
+  display: flex;
+  align-items: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 2.5rem;
@@ -54,31 +56,13 @@
   text-decoration: none;
   transition: $trs;
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 2.5rem;
-    width: 0.625rem;
-    height: 1.25rem;
-    background: url('/assets/img/i-triangle.svg') no-repeat center;
-    transform: translateY(-50%);
-  }
-
   .main-nav__content & {
     margin-bottom: 3.75rem;
     padding-left: 5.5rem;
     border-bottom: 1px solid $black;
-
-    &::after {
-      left: 2.5rem;
-      transform: translateY(-50%) rotate(180deg);
-    }
   }
 
   @include respond-min(tablet) {
-    display: flex;
-    align-items: center;
     padding-top: 0;
     padding-bottom: 0;
     padding-left: 0rem;
@@ -87,23 +71,46 @@
 
     .main-nav__item:last-of-type & {
       padding-right: 1rem;
-
-      &::after {
-        right: 0;
-      }
-    }
-
-    &::after {
-      right: 2rem;
-      width: 0.6rem;
-      height: 0.6rem;
-      background-image: url('/assets/img/i-triangle-grey.svg');
-      transform: translateY(-50%) rotate(0deg);
     }
 
     .main-nav__content & {
       display: none;
     }
+  }
+}
+
+.main-nav__link-triangle {
+  position: absolute;
+  top: 50%;
+  right: 2.5rem;
+  width: 0.625rem;
+  height: 1.25rem;
+  transform: translateY(-50%);
+  transition: $trs;
+
+  .main-nav__content & {
+    left: 2.5rem;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .main-nav__item--opened > .main-nav__link & {
+    transform: translateY(-50%) scale(0);
+  }
+
+  @include respond-min(tablet) {
+    right: 2rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    color: $d-grey;
+    transform: translateY(-50%) rotate(225deg);
+
+    .main-nav__item:last-of-type & {
+      right: 0;
+    }
+  }
+
+  svg {
+    fill: currentColor;
   }
 }
 
@@ -115,8 +122,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
-  flex-direction: column;
   transition: $trs;
   transform: translateX(-100%);
   -webkit-overflow-scrolling: touch;
@@ -127,10 +132,11 @@
 
   @include respond-min(tablet) {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 1px);
     bottom: auto;
+    display: flex;
     flex-direction: row;
-    max-height: calc((100vh - 9.875rem) * 0.8);
+    max-height: calc((100vh - 9.875rem) * 0.8); // максимум 80% от высоты экрана без хедера
     opacity: 0;
     pointer-events: none;
     transform: translateX(0) scaleY(1);

@@ -78,26 +78,23 @@
     margin-bottom: 0;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 1.75rem;
-    height: 1.125rem;
-    background: url('/assets/img/i-arrow.svg') no-repeat center;
-    background-size: contain;
-  }
-
   @include respond-min(tablet) {
     align-self: auto;
     margin-bottom: 0;
     padding-right: 2rem;
+  }
+}
 
-    &::after {
-      width: 0.875rem;
-      height: 0.5625rem;
-    }
+.products__link-arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1.75rem;
+  height: 1.125rem;
+
+  @include respond-min(tablet) {
+    width: 0.875rem;
+    height: 0.5625rem;
   }
 }

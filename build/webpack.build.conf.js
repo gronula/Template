@@ -8,12 +8,12 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   plugins: [
     new CleanWebpackPlugin(),
-    // new ImageminPlugin({
-    //   test: /\.(jpe?g|png|gif)$/i,
-    //   jpegtran: {
-    //     progressive: true
-    //   }
-    // }),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif)$/i,
+      jpegtran: {
+        progressive: true
+      }
+    }),
     new ImageminWebpWebpackPlugin({
       config: [{
         test: /img\/.*\.(jpe?g|png)$/i,

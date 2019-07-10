@@ -1,10 +1,15 @@
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+
 const header = document.querySelector(`.header`);
 const mainNavList = header.querySelector(`.main-nav__list`);
 const mainNavItems = mainNavList.querySelectorAll(`.main-nav__item`);
 
 const mainNavLinkClickHandler = (evt) => {
-  header.classList.toggle(`no-scroll`);
   const currentItem = evt.currentTarget.closest(`.main-nav__item`);
+  const currentItemContent = currentItem.querySelector(`.main-nav__content`);
+
+  disableBodyScroll(currentItemContent);
+
   mainNavItems.forEach((item) => {
     if (item !== currentItem) {
       item.classList.remove(`main-nav__item--opened`);
